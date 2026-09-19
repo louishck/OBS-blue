@@ -10,14 +10,21 @@ build, aucun abonnement, aucune connexion internet nécessaire pendant le live.
 
 ## Démarrer en 2 minutes
 
-```bash
-# 1. Voir à quoi ça ressemble
-open preview/index.html          # macOS   (Windows : start, Linux : xdg-open)
+**Windows — rien à installer :**
 
-# 2. Installer dans OBS (la collection se génère avec TES chemins)
+1. Place le dossier du pack exactement ici : `C:\Users\Public\autolt-obs`
+2. OBS ▸ **Collection de scènes ▸ Importer** ▸ `dist\obs\autolt-signature.json`
+3. **Passer à cette collection** — les 8 scènes et le stinger sont en place.
+
+Les collections livrées contiennent des chemins absolus : c'est pour ça que
+l'emplacement du dossier compte. Ailleurs que dans `C:\Users\Public\autolt-obs`
+(ou sur macOS), régénère-les avec tes chemins :
+
+```bash
 node tools/make-obs-collection.mjs --da signature
-# puis OBS ▸ Collection de scènes ▸ Importer ▸ dist/obs/autolt-signature.json
 ```
+
+Pour voir les trois DA avant de choisir, ouvre `preview/index.html`.
 
 Tout est détaillé dans **[docs/OBS.md](docs/OBS.md)** (import automatique,
 installation manuelle, tailles et positions exactes, réglage du stinger).
@@ -102,7 +109,7 @@ overlays/          les pages chargées par OBS
   css/themes/*     une DA = un fichier de variables
   css/fonts.css    polices embarquées en base64 (aucun appel réseau)
 dist/stingers/     transitions WebM prêtes pour OBS
-dist/obs/          collections de scènes importables (générées localement)
+dist/obs/          collections de scènes importables (C:\Users\Public\autolt-obs)
 preview/           panneau d'aperçu (ouvre index.html)
 tools/             scripts de génération
 docs/              installation OBS + détail des DA

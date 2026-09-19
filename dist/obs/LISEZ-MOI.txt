@@ -1,0 +1,23 @@
+COLLECTIONS OBS PRÊTES À IMPORTER
+=================================
+
+Ces fichiers contiennent des chemins ABSOLUS. Ils ne fonctionnent que si le
+dossier du pack se trouve exactement ici :
+
+    C:\Users\Public\autolt-obs
+
+Autrement dit, tu dois pouvoir ouvrir ce fichier dans l'explorateur :
+
+    C:\Users\Public\autolt-obs\overlays\live.html
+
+Ensuite, dans OBS : Collection de scènes > Importer > choisis un .json.
+
+  autolt-signature.json           la DA Signature, jeu en plein écran
+  autolt-signature-encadre.json   la DA Signature, jeu encadré + rail chat
+  autolt-cobalt.json              la DA Cobalt
+  autolt-mono.json                la DA Mono (noir & blanc)
+
+Le pack est ailleurs sur ton disque, ou tu es sur macOS / Linux ?
+Regénère les collections avec tes propres chemins (Node.js requis) :
+
+    node tools/make-obs-collection.mjs --da signature

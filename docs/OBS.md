@@ -5,37 +5,49 @@ Deux méthodes : l'import automatique (rapide) ou la configuration manuelle
 
 ---
 
-## Méthode 1 — Importer la collection toute faite
+## Méthode 1 — Importer une collection prête à l'emploi (Windows)
 
-> ⚠️ **La collection doit être générée sur ta machine.** OBS enregistre des
-> chemins absolus : un fichier `.json` généré ailleurs donnera « Fichiers
-> manquants » à l'import. C'est pour ça qu'aucun `.json` n'est livré dans le
-> dépôt — la commande ci-dessous le fabrique avec *tes* chemins.
-> Pas de Node.js installé ? Passe directement à la méthode 2.
+Rien à installer, rien à générer. Une seule contrainte : **le dossier du pack
+doit être à cet emplacement exact**, parce qu'OBS enregistre des chemins
+absolus.
 
-```bash
-node tools/make-obs-collection.mjs --da signature      # ou cobalt / mono
-```
+1. Place le dossier du pack ici :
+   ```
+   C:\Users\Public\autolt-obs
+   ```
+   Tu dois pouvoir ouvrir `C:\Users\Public\autolt-obs\overlays\live.html`
+   dans ton explorateur. (Le dossier `Public` est accessible sans droits
+   administrateur, et son chemin ne dépend pas de ton nom d'utilisateur.)
 
-Puis dans OBS : **Collection de scènes ▸ Importer** → choisis
-`dist/obs/autolt-signature.json` → **Passer à cette collection**.
+2. Dans OBS : **Collection de scènes ▸ Importer**, puis choisis dans
+   `dist\obs\` :
 
-Tu obtiens 8 scènes (Jeu, Starting, Pause, Webcam, Chat, Fin, Offline, Réseaux),
-les sources navigateur déjà réglées en 1920 × 1080, et le stinger déjà branché.
+   | Fichier | Ce que tu obtiens |
+   |---|---|
+   | `autolt-signature.json` | DA Signature, jeu en plein écran |
+   | `autolt-signature-encadre.json` | DA Signature, jeu encadré + rail chat |
+   | `autolt-cobalt.json` | DA Cobalt |
+   | `autolt-mono.json` | DA Mono |
 
-> Les chemins enregistrés sont **absolus**. Si tu déplaces le dossier, relance la
-> commande (elle repart du dossier où elle se trouve) et réimporte.
->
-> **Déjà importé une collection avec de mauvais chemins ?** OBS ouvre la fenêtre
-> « Fichiers manquants » : clique sur le bouton `...` de la première ligne,
+3. **Passer à cette collection**. Tu as les 8 scènes, les sources navigateur
+   déjà en 1920 × 1080, et le stinger branché avec son point de transition.
+
+Il ne te reste qu'à ajouter **tes** sources : capture de jeu, micro, widget de
+chat (voir les tailles et positions plus bas).
+
+> **Le pack est ailleurs, ou tu es sur macOS ?** Les chemins ne colleront pas.
+> Avec Node.js installé, régénère la collection avec tes propres chemins :
+> ```bash
+> node tools/make-obs-collection.mjs --da signature
+> ```
+> La commande repart du dossier où elle se trouve. Sans Node.js, passe à la
+> méthode 2.
+
+> **Déjà importé une collection dont les chemins ne collent pas ?** OBS ouvre la
+> fenêtre « Fichiers manquants » : clique sur le `...` de la première ligne,
 > désigne le fichier dans ton dossier `overlays\`, et OBS retrouve en général
 > les autres tout seuls puisqu'ils sont dans le même dossier. Le stinger est à
-> part, dans `dist/stingers/`.
-
-Il te reste à ajouter **tes** sources à toi : capture de jeu, caméra, micro,
-widget de chat — voir les tailles exactes plus bas.
-
----
+> part, dans `dist\stingers\`.
 
 ## Méthode 2 — À la main
 

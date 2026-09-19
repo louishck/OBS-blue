@@ -18,7 +18,14 @@ const flag = (n, d) => { const i = args.indexOf('--' + n); return i === -1 ? d :
 
 const DA = flag('da', 'signature');
 const LAYOUT = flag('layout', 'fullscreen');
-const ROOT = path.resolve(flag('root', REPO));
+const NAME = flag('name', null);
+/* --win : fabrique des chemins Windows (C:\…\overlays\live.html) même quand
+   le script tourne ailleurs. Sert à livrer des collections prêtes à importer
+   pour un emplacement convenu.                                              */
+const WIN = args.includes('--win');
+const P = WIN ? path.win32 : path;
+const ROOT = WIN ? flag('root', 'C:\\Users\\Public\\autolt-obs').replace(/[\\/]+$/, '')
+                 : path.resolve(flag('root', REPO));
 const OUT = path.join(REPO, 'dist', 'obs');
 const uuid = () => crypto.randomUUID();
 
@@ -26,14 +33,14 @@ const uuid = () => crypto.randomUUID();
    passe en mode URL (file://…?…) que si la scène a vraiment besoin d'options.
    Sinon on reste en fichier local, plus robuste — et réparable depuis la
    fenêtre « Fichiers manquants » d'OBS si le dossier bouge.                 */
+function fileUrl(abs) {
+  return WIN ? 'file:///' + abs.replace(/\\/g, '/') : pathToFileURL(abs).href;
+}
 function browserSettings(file, params) {
-  const abs = path.join(ROOT, 'overlays', file);
+  const abs = P.join(ROOT, 'overlays', file);
   const qs = (params || []).filter(Boolean);
   if (!qs.length) return { is_local_file: true, local_file: abs, url: '' };
-  return {
-    is_local_file: false, local_file: abs,
-    url: pathToFileURL(abs).href + '?' + qs.join('&')
-  };
+  return { is_local_file: false, local_file: abs, url: fileUrl(abs) + '?' + qs.join('&') };
 }
 
 /* --- sources navigateur ---------------------------------------------- */
@@ -117,7 +124,7 @@ for (const [name, layers] of SCENES) {
   });
 }
 
-const stinger = path.join(ROOT, 'dist', 'stingers', `stinger-${DA}.webm`);
+const stinger = P.join(ROOT, 'dist', 'stingers', `stinger-${DA}.webm`);
 const collection = {
   DesktopAudioDevice1: { prev_ver: 520093699, name: 'Audio du bureau', id: 'pulse_output_capture', versioned_id: 'pulse_output_capture', settings: {}, mixers: 255, sync: 0, flags: 0, volume: 1.0, balance: 0.5, enabled: true, muted: false, 'push-to-mute': false, 'push-to-mute-delay': 0, 'push-to-talk': false, 'push-to-talk-delay': 0, hotkeys: {}, deinterlace_mode: 0, deinterlace_field_order: 0, monitoring_type: 0, private_settings: {} },
   current_scene: SCENES[0][0],
@@ -125,7 +132,7 @@ const collection = {
   current_transition: 'Stinger Autolt',
   groups: [],
   modules: {},
-  name: `Autolt — ${DA}`,
+  name: NAME || `Autolt — ${DA}${LAYOUT === 'frame' ? ' (encadré)' : ''}`,
   preview_locked: false,
   quick_transitions: [
     { name: 'Fondu', duration: 300, hotkeys: [], id: 1, fade_to_black: false },
@@ -150,8 +157,8 @@ const collection = {
 };
 
 fs.mkdirSync(OUT, { recursive: true });
-const out = path.join(OUT, `autolt-${DA}.json`);
+const out = path.join(OUT, `autolt-${DA}${LAYOUT === 'frame' ? '-encadre' : ''}.json`);
 fs.writeFileSync(out, JSON.stringify(collection, null, 2));
 console.log('✓', path.relative(REPO, out));
 console.log('  OBS ▸ Collection de scènes ▸ Importer ▸ ' + out);
-console.log('  Sources pointées sur : ' + path.join(ROOT, 'overlays'));
+console.log('  Sources pointées sur : ' + P.join(ROOT, 'overlays'));
