@@ -531,6 +531,7 @@
     brandmark: brandmark, clock: clock, livePill: livePill, ticker: ticker,
     socials: socials, events: events, countdown: countdown, cam: cam,
     chip: chip, icon: icon,
+    paintBrushes: paintBrushes,
     logotype: logotype, tagline: tagline, sceneline: sceneline, nframe: nframe,
     alertBar: alertBar, profileRows: profileRows, timerChip: timerChip,
     socialRow: socialRow, gchip: gchip

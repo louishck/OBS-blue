@@ -22,15 +22,15 @@ absolus.
 2. Dans OBS : **Collection de scènes ▸ Importer**, puis choisis dans
    `dist\obs\` :
 
-   | Fichier | Ce que tu obtiens |
-   |---|---|
-   | `autolt-signature.json` | DA Signature, jeu en plein écran |
-   | `autolt-signature-encadre.json` | DA Signature, jeu encadré + rail chat |
-   | `autolt-cobalt.json` | DA Cobalt |
-   | `autolt-mono.json` | DA Mono |
+   `autolt-signature.json` — c'est le seul fichier à importer, il contient
+   les deux variantes de scène de jeu (plein écran et encadrée).
 
-3. **Passer à cette collection**. Tu as les 8 scènes, les sources navigateur
-   déjà en 1920 × 1080, et le stinger branché avec son point de transition.
+3. **Passer à cette collection**. Tu obtiens 7 scènes, **chaque élément en
+   source séparée** (logotype, phrase, minuterie, cadre chat, cadre caméra…)
+   que tu peux déplacer et redimensionner à la souris sans rien casser, et le
+   stinger branché avec son point de transition.
+
+   La liste complète des éléments et leurs tailles : [WIDGETS.md](WIDGETS.md).
 
 Il ne te reste qu'à ajouter **tes** sources : capture de jeu, micro, widget de
 chat (voir les tailles et positions plus bas).

@@ -172,7 +172,10 @@
   }
 
   /* ---------- 7. CHAT ----------------------------------------------------- */
+  /* Cadre vide par défaut : c'est le widget de chat qui vient dessous.
+     ?demo=1 affiche des messages d'exemple, pratique pour régler la position. */
   function chatLines(list) {
+    if (BB.q('demo', '0') !== '1') return null;
     var n = el('div', 'chat-lines');
     add(n, el('div', 'sys', 'zone réservée au widget de chat'));
     (list || CFG.chatSample || []).forEach(function (m) {

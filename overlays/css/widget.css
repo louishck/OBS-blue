@@ -1,0 +1,20 @@
+/* =========================================================================
+   WIDGETS — une page = un seul élément, fond transparent, calé en haut à
+   gauche. Chaque widget devient une source navigateur déplaçable dans OBS.
+   ========================================================================= */
+html,body{background:transparent;margin:0;overflow:hidden;}
+
+/* Marge de sécurité : les cadres débordent (coins renforcés, étiquette,
+   halo). 24 px de chaque côté évitent que la source les rogne.            */
+.widget-host{
+  position:absolute;top:0;left:0;
+  padding:24px;
+  display:inline-flex;align-items:flex-start;
+}
+.widget-host.no-pad{padding:0;}
+
+/* Le fond plein écran n'a pas besoin de marge */
+.widget-bg{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;}
+
+/* Les cadres gardent leur taille exacte à l'intérieur de la marge */
+.widget-host .nframe{flex:0 0 auto;}

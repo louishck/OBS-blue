@@ -14,7 +14,8 @@ build, aucun abonnement, aucune connexion internet nécessaire pendant le live.
 
 1. Place le dossier du pack exactement ici : `C:\Users\Public\autolt-obs`
 2. OBS ▸ **Collection de scènes ▸ Importer** ▸ `dist\obs\autolt-signature.json`
-3. **Passer à cette collection** — les 8 scènes et le stinger sont en place.
+3. **Passer à cette collection** — 7 scènes, le stinger, et **chaque élément
+   en source séparée** que tu déplaces comme tu veux.
 
 Les collections livrées contiennent des chemins absolus : c'est pour ça que
 l'emplacement du dossier compte. Ailleurs que dans `C:\Users\Public\autolt-obs`
@@ -55,6 +56,15 @@ installation manuelle, tailles et positions exactes, réglage du stinger).
 | **Mono** | `?da=mono` | Noir & blanc brutaliste, typo massive, grain |
 
 Détails et personnalisation des couleurs : **[docs/DA.md](docs/DA.md)**.
+
+## Les éléments indépendants
+
+Chaque morceau de l'habillage existe aussi en page autonome et transparente
+dans `overlays/widgets/` — logotype, accroche, phrase, minuterie, cadres
+caméra / chat / jeu, pastille live, infos de partie, barres d'alerte, réseaux,
+fond. Dans OBS, une source par élément : tu bouges ce que tu veux, où tu veux.
+
+Liste complète, tailles et options : **[docs/WIDGETS.md](docs/WIDGETS.md)**.
 
 ---
 
@@ -109,7 +119,8 @@ overlays/          les pages chargées par OBS
   css/themes/*     une DA = un fichier de variables
   css/fonts.css    polices embarquées en base64 (aucun appel réseau)
 dist/stingers/     transitions WebM prêtes pour OBS
-dist/obs/          collections de scènes importables (C:\Users\Public\autolt-obs)
+overlays/widgets/  un élément par page, pour tout déplacer dans OBS
+dist/obs/          collection de scènes importable (C:\Users\Public\autolt-obs)
 preview/           panneau d'aperçu (ouvre index.html)
 tools/             scripts de génération
 docs/              installation OBS + détail des DA

@@ -1,27 +1,4 @@
 {
-  "DesktopAudioDevice1": {
-    "prev_ver": 520093699,
-    "name": "Audio du bureau",
-    "id": "pulse_output_capture",
-    "versioned_id": "pulse_output_capture",
-    "settings": {},
-    "mixers": 255,
-    "sync": 0,
-    "flags": 0,
-    "volume": 1,
-    "balance": 0.5,
-    "enabled": true,
-    "muted": false,
-    "push-to-mute": false,
-    "push-to-mute-delay": 0,
-    "push-to-talk": false,
-    "push-to-talk-delay": 0,
-    "hotkeys": {},
-    "deinterlace_mode": 0,
-    "deinterlace_field_order": 0,
-    "monitoring_type": 0,
-    "private_settings": {}
-  },
   "current_scene": "🎮 Jeu",
   "current_program_scene": "🎮 Jeu",
   "current_transition": "Stinger Autolt",
@@ -55,16 +32,13 @@
       "name": "🎮 Jeu"
     },
     {
+      "name": "🖼 Jeu encadré"
+    },
+    {
       "name": "⏳ Starting"
     },
     {
       "name": "⏸ Pause"
-    },
-    {
-      "name": "🎙 Webcam"
-    },
-    {
-      "name": "💬 Chat"
     },
     {
       "name": "👋 Fin"
@@ -79,13 +53,13 @@
   "sources": [
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Jeu",
-      "uuid": "e376f2a5-6b5c-4b0e-b625-16671adb6257",
+      "name": "Autolt · Fond",
+      "uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\live.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\bg.html",
         "url": "",
         "width": 1920,
         "height": 1080,
@@ -116,16 +90,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Pause",
-      "uuid": "4db7efa5-c4be-42c2-9b3f-08c9a3f86f9c",
+      "name": "Autolt · Logotype",
+      "uuid": "4edcfc92-da77-4462-94ea-397bf2e18034",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\pause.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\logo.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 538,
+        "height": 332,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -153,16 +127,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Starting",
-      "uuid": "22eec67d-6e1c-413a-b8d3-3dcc1da2d8ba",
+      "name": "Autolt · Logotype petit",
+      "uuid": "066da0ef-e237-4e45-9991-af3e72aa4b90",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\starting.html",
-        "url": "",
-        "width": 1920,
-        "height": 1080,
+        "is_local_file": false,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\logo.html",
+        "url": "file:///C:/Users/Public/autolt-obs/overlays/widgets/logo.html?size=sm",
+        "width": 274,
+        "height": 193,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -190,16 +164,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Webcam",
-      "uuid": "ef4829ae-c24b-4c68-89dc-336174fb681c",
+      "name": "Autolt · Accroche",
+      "uuid": "29ba3557-3ece-457a-9750-69d54514ea74",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\webcam.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\tagline.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 648,
+        "height": 74,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -227,16 +201,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Fin",
-      "uuid": "15ed69fa-62b1-4227-b4d4-5b4549b1e1bd",
+      "name": "Autolt · Réseaux",
+      "uuid": "d4d0a6ec-5d0d-4bd7-8b32-253540cf5ffe",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\ending.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\socials.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 655,
+        "height": 90,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -264,16 +238,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Alertes",
-      "uuid": "cc32865b-292a-49d9-98cc-e18e6cb5a426",
+      "name": "Autolt · Panneau réseaux",
+      "uuid": "e1cabeeb-8138-456d-984f-63adb7095fc6",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\alerts.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\panels.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 568,
+        "height": 440,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -301,16 +275,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Chat",
-      "uuid": "cf3cebc6-2f5a-4df7-b29d-3c2ecdcf79f9",
+      "name": "Autolt · Cadre caméra",
+      "uuid": "6236605e-e698-4a91-baf1-872a65c7a3e8",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\chat.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\cam.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 448,
+        "height": 273,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -338,16 +312,16 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Offline",
-      "uuid": "05784aea-3b79-4a25-9e31-7ea35e3c19e1",
+      "name": "Autolt · Cadre chat",
+      "uuid": "95ee8740-2c70-48ed-8e6e-281da2629631",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\offline.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\chat.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 408,
+        "height": 608,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -375,16 +349,349 @@
     },
     {
       "prev_ver": 520093699,
-      "name": "Autolt / Réseaux",
-      "uuid": "933b3a72-a6a0-494c-a04f-113ac741dbad",
+      "name": "Autolt · Cadre chat haut",
+      "uuid": "85d1786d-cad8-4cc5-a699-46ba4d9dab16",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": false,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\chat.html",
+        "url": "file:///C:/Users/Public/autolt-obs/overlays/widgets/chat.html?h=810",
+        "width": 408,
+        "height": 858,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Cadre jeu",
+      "uuid": "f4cf12e6-c601-4e55-b21e-bba07d4349e3",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\panels.html",
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\jeu.html",
         "url": "",
-        "width": 1920,
-        "height": 1080,
+        "width": 1488,
+        "height": 858,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Pastille live",
+      "uuid": "c4ee3879-2633-4594-a924-46972258551d",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\live.html",
+        "url": "",
+        "width": 231,
+        "height": 100,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Infos partie",
+      "uuid": "e2548d02-c497-4dbd-ab56-604f58b44780",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\infos.html",
+        "url": "",
+        "width": 511,
+        "height": 100,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Minuterie",
+      "uuid": "daba3ce2-dcc0-4785-a57a-5c27ea52a611",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\timer.html",
+        "url": "",
+        "width": 283,
+        "height": 110,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Barres d’alerte",
+      "uuid": "17e358fc-07c3-48d9-998b-3452b201abc5",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\alertes.html",
+        "url": "",
+        "width": 516,
+        "height": 346,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Phrase / starting",
+      "uuid": "ebec7eef-9a0d-4c38-a1b2-5cb2e45554b0",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": false,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\phrase.html",
+        "url": "file:///C:/Users/Public/autolt-obs/overlays/widgets/phrase.html?scene=starting",
+        "width": 752,
+        "height": 84,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Phrase / pause",
+      "uuid": "601ea2c8-218d-486d-8e72-7e3a0db593fb",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": false,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\phrase.html",
+        "url": "file:///C:/Users/Public/autolt-obs/overlays/widgets/phrase.html?scene=pause",
+        "width": 693,
+        "height": 84,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Phrase / fin",
+      "uuid": "d88d95af-a19c-4ba7-b2c7-8083fc00c777",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": false,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\phrase.html",
+        "url": "file:///C:/Users/Public/autolt-obs/overlays/widgets/phrase.html?scene=ending",
+        "width": 586,
+        "height": 84,
+        "fps_custom": false,
+        "fps": 30,
+        "reroute_audio": false,
+        "restart_when_active": true,
+        "shutdown": true,
+        "webpage_control_level": 1,
+        "css": ""
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "Autolt · Phrase / offline",
+      "uuid": "fc5a8417-3379-46f0-97a7-05c8a4a05660",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": false,
+        "local_file": "C:\\Users\\Public\\autolt-obs\\overlays\\widgets\\phrase.html",
+        "url": "file:///C:/Users/Public/autolt-obs/overlays/widgets/phrase.html?scene=offline",
+        "width": 585,
+        "height": 84,
         "fps_custom": false,
         "fps": 30,
         "reroute_audio": false,
@@ -413,21 +720,173 @@
     {
       "prev_ver": 520093699,
       "name": "🎮 Jeu",
-      "uuid": "4673f1a2-2ce8-4a91-9988-1c45dc06e6b3",
+      "uuid": "a27f3ea9-9785-469a-95c7-ee196ad04747",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 2,
+        "id_counter": 6,
         "custom_size": false,
         "items": [
           {
-            "name": "Autolt / Alertes",
-            "source_uuid": "cc32865b-292a-49d9-98cc-e18e6cb5a426",
+            "name": "Autolt · Barres d’alerte",
+            "source_uuid": "17e358fc-07c3-48d9-998b-3452b201abc5",
+            "visible": false,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 60,
+              "y": 360
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 6,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Cadre caméra",
+            "source_uuid": "6236605e-e698-4a91-baf1-872a65c7a3e8",
+            "visible": false,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 1472,
+              "y": 760
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 5,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Cadre chat",
+            "source_uuid": "95ee8740-2c70-48ed-8e6e-281da2629631",
             "visible": true,
             "locked": false,
             "rot": 0,
             "pos": {
+              "x": 1506,
+              "y": 446
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
               "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 4,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Infos partie",
+            "source_uuid": "e2548d02-c497-4dbd-ab56-604f58b44780",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 1208,
+              "y": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 3,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Pastille live",
+            "source_uuid": "c4ee3879-2633-4594-a924-46972258551d",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 500,
               "y": 0
             },
             "scale": {
@@ -459,8 +918,303 @@
             "private_settings": {}
           },
           {
-            "name": "Autolt / Jeu",
-            "source_uuid": "e376f2a5-6b5c-4b0e-b625-16671adb6257",
+            "name": "Autolt · Logotype petit",
+            "source_uuid": "066da0ef-e237-4e45-9991-af3e72aa4b90",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 262,
+              "y": -32
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 1,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          }
+        ]
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 520093699,
+      "name": "🖼 Jeu encadré",
+      "uuid": "187cd574-c2c5-41e2-806d-21f1b78e5f12",
+      "id": "scene",
+      "versioned_id": "scene",
+      "settings": {
+        "id_counter": 7,
+        "custom_size": false,
+        "items": [
+          {
+            "name": "Autolt · Réseaux",
+            "source_uuid": "d4d0a6ec-5d0d-4bd7-8b32-253540cf5ffe",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 633,
+              "y": 966
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 7,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Infos partie",
+            "source_uuid": "e2548d02-c497-4dbd-ab56-604f58b44780",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 1370,
+              "y": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 6,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Accroche",
+            "source_uuid": "29ba3557-3ece-457a-9750-69d54514ea74",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 236,
+              "y": 22
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 5,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Logotype petit",
+            "source_uuid": "066da0ef-e237-4e45-9991-af3e72aa4b90",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": -8,
+              "y": -40
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 4,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Cadre chat haut",
+            "source_uuid": "85d1786d-cad8-4cc5-a699-46ba4d9dab16",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 1496,
+              "y": 116
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 3,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Cadre jeu",
+            "source_uuid": "f4cf12e6-c601-4e55-b21e-bba07d4349e3",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 16,
+              "y": 116
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Fond",
+            "source_uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -518,16 +1272,130 @@
     {
       "prev_ver": 520093699,
       "name": "⏳ Starting",
-      "uuid": "98a7a83e-d1dd-456a-9660-3163e9790cb8",
+      "uuid": "f30515d7-525e-4be0-8329-0ecc531769fa",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 1,
+        "id_counter": 4,
         "custom_size": false,
         "items": [
           {
-            "name": "Autolt / Starting",
-            "source_uuid": "22eec67d-6e1c-413a-b8d3-3dcc1da2d8ba",
+            "name": "Autolt · Minuterie",
+            "source_uuid": "daba3ce2-dcc0-4785-a57a-5c27ea52a611",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 819,
+              "y": 705
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 4,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Phrase / starting",
+            "source_uuid": "ebec7eef-9a0d-4c38-a1b2-5cb2e45554b0",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 584,
+              "y": 581
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 3,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Logotype",
+            "source_uuid": "4edcfc92-da77-4462-94ea-397bf2e18034",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 691,
+              "y": 237
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Fond",
+            "source_uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -585,22 +1453,22 @@
     {
       "prev_ver": 520093699,
       "name": "⏸ Pause",
-      "uuid": "31339d6a-640b-47f4-ae07-2c31d1fa28fa",
+      "uuid": "09b2de33-6c28-42da-8824-4309e451f1b2",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 1,
+        "id_counter": 4,
         "custom_size": false,
         "items": [
           {
-            "name": "Autolt / Pause",
-            "source_uuid": "4db7efa5-c4be-42c2-9b3f-08c9a3f86f9c",
+            "name": "Autolt · Réseaux",
+            "source_uuid": "d4d0a6ec-5d0d-4bd7-8b32-253540cf5ffe",
             "visible": true,
             "locked": false,
             "rot": 0,
             "pos": {
-              "x": 0,
-              "y": 0
+              "x": 633,
+              "y": 717
             },
             "scale": {
               "x": 1,
@@ -617,7 +1485,7 @@
             "crop_top": 0,
             "crop_right": 0,
             "crop_bottom": 0,
-            "id": 1,
+            "id": 4,
             "group_item_backup": false,
             "scale_filter": "disable",
             "blend_method": "default",
@@ -629,45 +1497,16 @@
               "duration": 0
             },
             "private_settings": {}
-          }
-        ]
-      },
-      "mixers": 0,
-      "sync": 0,
-      "flags": 0,
-      "volume": 1,
-      "balance": 0.5,
-      "enabled": true,
-      "muted": false,
-      "push-to-mute": false,
-      "push-to-mute-delay": 0,
-      "push-to-talk": false,
-      "push-to-talk-delay": 0,
-      "hotkeys": {},
-      "deinterlace_mode": 0,
-      "deinterlace_field_order": 0,
-      "monitoring_type": 0,
-      "private_settings": {}
-    },
-    {
-      "prev_ver": 520093699,
-      "name": "🎙 Webcam",
-      "uuid": "6794bd66-ee05-4bff-825b-e231000a6841",
-      "id": "scene",
-      "versioned_id": "scene",
-      "settings": {
-        "id_counter": 1,
-        "custom_size": false,
-        "items": [
+          },
           {
-            "name": "Autolt / Webcam",
-            "source_uuid": "ef4829ae-c24b-4c68-89dc-336174fb681c",
+            "name": "Autolt · Phrase / pause",
+            "source_uuid": "601ea2c8-218d-486d-8e72-7e3a0db593fb",
             "visible": true,
             "locked": false,
             "rot": 0,
             "pos": {
-              "x": 0,
-              "y": 0
+              "x": 614,
+              "y": 591
             },
             "scale": {
               "x": 1,
@@ -684,7 +1523,7 @@
             "crop_top": 0,
             "crop_right": 0,
             "crop_bottom": 0,
-            "id": 1,
+            "id": 3,
             "group_item_backup": false,
             "scale_filter": "disable",
             "blend_method": "default",
@@ -696,39 +1535,48 @@
               "duration": 0
             },
             "private_settings": {}
-          }
-        ]
-      },
-      "mixers": 0,
-      "sync": 0,
-      "flags": 0,
-      "volume": 1,
-      "balance": 0.5,
-      "enabled": true,
-      "muted": false,
-      "push-to-mute": false,
-      "push-to-mute-delay": 0,
-      "push-to-talk": false,
-      "push-to-talk-delay": 0,
-      "hotkeys": {},
-      "deinterlace_mode": 0,
-      "deinterlace_field_order": 0,
-      "monitoring_type": 0,
-      "private_settings": {}
-    },
-    {
-      "prev_ver": 520093699,
-      "name": "💬 Chat",
-      "uuid": "9c621153-fa10-41cb-91a5-da79ed1f3544",
-      "id": "scene",
-      "versioned_id": "scene",
-      "settings": {
-        "id_counter": 1,
-        "custom_size": false,
-        "items": [
+          },
           {
-            "name": "Autolt / Chat",
-            "source_uuid": "cf3cebc6-2f5a-4df7-b29d-3c2ecdcf79f9",
+            "name": "Autolt · Logotype",
+            "source_uuid": "4edcfc92-da77-4462-94ea-397bf2e18034",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 691,
+              "y": 245
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Fond",
+            "source_uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -786,16 +1634,130 @@
     {
       "prev_ver": 520093699,
       "name": "👋 Fin",
-      "uuid": "90aedcfe-4080-40de-ac96-ce54ca9f1e97",
+      "uuid": "381fdb71-e892-4435-aab9-bb5c05efea63",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 1,
+        "id_counter": 4,
         "custom_size": false,
         "items": [
           {
-            "name": "Autolt / Fin",
-            "source_uuid": "15ed69fa-62b1-4227-b4d4-5b4549b1e1bd",
+            "name": "Autolt · Réseaux",
+            "source_uuid": "d4d0a6ec-5d0d-4bd7-8b32-253540cf5ffe",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 633,
+              "y": 717
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 4,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Phrase / fin",
+            "source_uuid": "d88d95af-a19c-4ba7-b2c7-8083fc00c777",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 667,
+              "y": 591
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 3,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Logotype",
+            "source_uuid": "4edcfc92-da77-4462-94ea-397bf2e18034",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 691,
+              "y": 245
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Fond",
+            "source_uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -853,16 +1815,130 @@
     {
       "prev_ver": 520093699,
       "name": "📴 Offline",
-      "uuid": "6874b4c6-a174-41d5-9453-1f22d95126f3",
+      "uuid": "23bae8a2-cc18-4e8e-b319-5c16b71de46c",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 1,
+        "id_counter": 4,
         "custom_size": false,
         "items": [
           {
-            "name": "Autolt / Offline",
-            "source_uuid": "05784aea-3b79-4a25-9e31-7ea35e3c19e1",
+            "name": "Autolt · Réseaux",
+            "source_uuid": "d4d0a6ec-5d0d-4bd7-8b32-253540cf5ffe",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 633,
+              "y": 717
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 4,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Phrase / offline",
+            "source_uuid": "fc5a8417-3379-46f0-97a7-05c8a4a05660",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 668,
+              "y": 591
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 3,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Logotype",
+            "source_uuid": "4edcfc92-da77-4462-94ea-397bf2e18034",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 691,
+              "y": 245
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Fond",
+            "source_uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -920,16 +1996,92 @@
     {
       "prev_ver": 520093699,
       "name": "🔗 Réseaux",
-      "uuid": "4c4a153e-ef3d-4d59-9f94-3727c563bc19",
+      "uuid": "60162432-daca-408a-8628-5789e66dca77",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
-        "id_counter": 1,
+        "id_counter": 3,
         "custom_size": false,
         "items": [
           {
-            "name": "Autolt / Réseaux",
-            "source_uuid": "933b3a72-a6a0-494c-a04f-113ac741dbad",
+            "name": "Autolt · Panneau réseaux",
+            "source_uuid": "e1cabeeb-8138-456d-984f-63adb7095fc6",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 676,
+              "y": 481
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 3,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Logotype",
+            "source_uuid": "4edcfc92-da77-4462-94ea-397bf2e18034",
+            "visible": true,
+            "locked": false,
+            "rot": 0,
+            "pos": {
+              "x": 691,
+              "y": 131
+            },
+            "scale": {
+              "x": 1,
+              "y": 1
+            },
+            "align": 5,
+            "bounds_type": 0,
+            "bounds_align": 0,
+            "bounds": {
+              "x": 0,
+              "y": 0
+            },
+            "crop_left": 0,
+            "crop_top": 0,
+            "crop_right": 0,
+            "crop_bottom": 0,
+            "id": 2,
+            "group_item_backup": false,
+            "scale_filter": "disable",
+            "blend_method": "default",
+            "blend_type": "normal",
+            "show_transition": {
+              "duration": 0
+            },
+            "hide_transition": {
+              "duration": 0
+            },
+            "private_settings": {}
+          },
+          {
+            "name": "Autolt · Fond",
+            "source_uuid": "8f8f9989-11fa-4757-86bd-bca23f7387ec",
             "visible": true,
             "locked": false,
             "rot": 0,
