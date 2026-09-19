@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, '..');
@@ -21,19 +21,34 @@ const LAYOUT = flag('layout', 'fullscreen');
 const ROOT = path.resolve(flag('root', REPO));
 const OUT = path.join(REPO, 'dist', 'obs');
 const uuid = () => crypto.randomUUID();
-const page = (f, q) => path.join(ROOT, 'overlays', f) + `?da=${DA}${q || ''}`;
+
+/* OBS ignore la chaîne de requête quand « Fichier local » est coché : on ne
+   passe en mode URL (file://…?…) que si la scène a vraiment besoin d'options.
+   Sinon on reste en fichier local, plus robuste — et réparable depuis la
+   fenêtre « Fichiers manquants » d'OBS si le dossier bouge.                 */
+function browserSettings(file, params) {
+  const abs = path.join(ROOT, 'overlays', file);
+  const qs = (params || []).filter(Boolean);
+  if (!qs.length) return { is_local_file: true, local_file: abs, url: '' };
+  return {
+    is_local_file: false, local_file: abs,
+    url: pathToFileURL(abs).href + '?' + qs.join('&')
+  };
+}
 
 /* --- sources navigateur ---------------------------------------------- */
+const DA_PARAM = DA === 'signature' ? '' : `da=${DA}`;          // signature = défaut
+const LAYOUT_PARAM = LAYOUT === 'fullscreen' ? '' : `layout=${LAYOUT}`;
 const BROWSERS = [
-  ['Autolt / Jeu',       'live.html',     `&layout=${LAYOUT}`],
-  ['Autolt / Pause',     'pause.html',    ''],
-  ['Autolt / Starting',  'starting.html', ''],
-  ['Autolt / Webcam',    'webcam.html',   ''],
-  ['Autolt / Fin',       'ending.html',   ''],
-  ['Autolt / Alertes',   'alerts.html',   ''],
-  ['Autolt / Chat',      'chat.html',     ''],
-  ['Autolt / Offline',   'offline.html',  ''],
-  ['Autolt / Réseaux',   'panels.html',   '']
+  ['Autolt / Jeu',       'live.html',     [DA_PARAM, LAYOUT_PARAM]],
+  ['Autolt / Pause',     'pause.html',    [DA_PARAM]],
+  ['Autolt / Starting',  'starting.html', [DA_PARAM]],
+  ['Autolt / Webcam',    'webcam.html',   [DA_PARAM]],
+  ['Autolt / Fin',       'ending.html',   [DA_PARAM]],
+  ['Autolt / Alertes',   'alerts.html',   [DA_PARAM]],
+  ['Autolt / Chat',      'chat.html',     [DA_PARAM]],
+  ['Autolt / Offline',   'offline.html',  [DA_PARAM]],
+  ['Autolt / Réseaux',   'panels.html',   [DA_PARAM]]
 ];
 
 /* --- scènes : nom → sources empilées (du fond vers le dessus) ---------- */
@@ -51,15 +66,13 @@ const SCENES = [
 const ids = new Map();
 const sources = [];
 
-for (const [name, file, q] of BROWSERS) {
+for (const [name, file, params] of BROWSERS) {
   const id = uuid(); ids.set(name, id);
   sources.push({
     prev_ver: 520093699, name, uuid: id,
     id: 'browser_source', versioned_id: 'browser_source',
     settings: {
-      is_local_file: true,
-      local_file: page(file, q).split('?')[0],
-      url: 'file://' + page(file, q),
+      ...browserSettings(file, params),
       width: 1920, height: 1080,
       fps_custom: false, fps: 30,
       reroute_audio: false, restart_when_active: true, shutdown: true,
