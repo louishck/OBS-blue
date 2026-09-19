@@ -1,3 +1,6 @@
 node_modules/
 package-lock.json
 .DS_Store
+
+# Collections OBS : à générer sur SA machine (chemins absolus)
+dist/obs/

@@ -14,7 +14,7 @@ build, aucun abonnement, aucune connexion internet nécessaire pendant le live.
 # 1. Voir à quoi ça ressemble
 open preview/index.html          # macOS   (Windows : start, Linux : xdg-open)
 
-# 2. Installer dans OBS
+# 2. Installer dans OBS (la collection se génère avec TES chemins)
 node tools/make-obs-collection.mjs --da signature
 # puis OBS ▸ Collection de scènes ▸ Importer ▸ dist/obs/autolt-signature.json
 ```
@@ -102,7 +102,7 @@ overlays/          les pages chargées par OBS
   css/themes/*     une DA = un fichier de variables
   css/fonts.css    polices embarquées en base64 (aucun appel réseau)
 dist/stingers/     transitions WebM prêtes pour OBS
-dist/obs/          collections de scènes importables
+dist/obs/          collections de scènes importables (générées localement)
 preview/           panneau d'aperçu (ouvre index.html)
 tools/             scripts de génération
 docs/              installation OBS + détail des DA

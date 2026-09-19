@@ -7,6 +7,12 @@ Deux méthodes : l'import automatique (rapide) ou la configuration manuelle
 
 ## Méthode 1 — Importer la collection toute faite
 
+> ⚠️ **La collection doit être générée sur ta machine.** OBS enregistre des
+> chemins absolus : un fichier `.json` généré ailleurs donnera « Fichiers
+> manquants » à l'import. C'est pour ça qu'aucun `.json` n'est livré dans le
+> dépôt — la commande ci-dessous le fabrique avec *tes* chemins.
+> Pas de Node.js installé ? Passe directement à la méthode 2.
+
 ```bash
 node tools/make-obs-collection.mjs --da signature      # ou cobalt / mono
 ```
@@ -18,7 +24,13 @@ Tu obtiens 8 scènes (Jeu, Starting, Pause, Webcam, Chat, Fin, Offline, Réseaux
 les sources navigateur déjà réglées en 1920 × 1080, et le stinger déjà branché.
 
 > Les chemins enregistrés sont **absolus**. Si tu déplaces le dossier, relance la
-> commande avec `--root /nouveau/chemin` et réimporte.
+> commande (elle repart du dossier où elle se trouve) et réimporte.
+>
+> **Déjà importé une collection avec de mauvais chemins ?** OBS ouvre la fenêtre
+> « Fichiers manquants » : clique sur le bouton `...` de la première ligne,
+> désigne le fichier dans ton dossier `overlays\`, et OBS retrouve en général
+> les autres tout seuls puisqu'ils sont dans le même dossier. Le stinger est à
+> part, dans `dist/stingers/`.
 
 Il te reste à ajouter **tes** sources à toi : capture de jeu, caméra, micro,
 widget de chat — voir les tailles exactes plus bas.
