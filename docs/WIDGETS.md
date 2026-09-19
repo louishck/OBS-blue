@@ -18,7 +18,8 @@ Ils sont tous dans `overlays/widgets/`.
 | Cadre chat | `chat.html` | 408 × 608 |
 | Cadre jeu | `jeu.html` | 1488 × 858 |
 | Pastille « en direct » | `live.html` | 231 × 100 |
-| Infos partie (map + elo) | `infos.html` | 511 × 100 |
+| Stats FACEIT (elo, winrate, %HS, K/D) | `faceit.html` | 783 × 100 |
+| Infos partie (map + elo, fixes) | `infos.html` | 511 × 100 |
 | Minuterie | `timer.html` | 283 × 110 |
 | Barres d'alerte | `alertes.html` | 516 × 346 |
 | Phrase de scène | `phrase.html?scene=pause` | ~700 × 84 |
@@ -53,7 +54,8 @@ file:///C:/Users/Public/autolt-obs/overlays/widgets/cam.html?w=520&h=293
 | `?map=` `?elo=` | infos | valeurs affichées |
 | `?t=` | timer | durée en secondes |
 | `?label=` | live | texte de la pastille |
-| `?demo=1` | chat | affiche de faux messages, pratique pour régler la position |
+| `?demo=1` | chat, faceit | affiche des valeurs d'exemple, pratique pour régler la position |
+| `?dir=col` | faceit | les quatre stats empilées au lieu d'une rangée |
 
 Le reste (pseudo, réseaux, phrases par défaut, couleurs) se règle une fois pour
 toutes dans `overlays/js/config.js`.
@@ -66,3 +68,54 @@ sources à toi (capture de jeu, caméra, widget de chat), puis les cadres et les
 
 La collection livrée dans `dist/obs/` est déjà montée comme ça — tu peux t'en
 servir comme point de départ et tout déplacer à la souris.
+
+
+## Les stats FACEIT
+
+`faceit.html` affiche **ELO, winrate, % HS et K/D**, lus sur ton profil FACEIT
+et rafraîchis toutes les 5 minutes (réglable). Le pseudo se met dans
+`overlays/js/config.js` :
+
+```js
+faceit: {
+  nickname: 'autolt_',     // le pseudo dans l'URL de ton profil
+  game: 'cs2',
+  apiKey: '',              // facultatif, voir plus bas
+  proxy: '',               // dépannage CORS, voir plus bas
+  refreshSeconds: 300
+}
+```
+
+### Si les chiffres ne s'affichent pas
+
+Ouvre **`overlays/widgets/faceit-test.html`** : la page dit quelles requêtes
+sont parties, ce qu'elles ont répondu, les valeurs reconnues, et le remède.
+
+Deux causes possibles :
+
+1. **Le navigateur bloque la requête** (message « Failed to fetch »). Une page
+   ouverte en `file://` n'a pas le droit d'appeler n'importe quel site. Remède :
+   ```js
+   proxy: 'https://api.allorigins.win/raw?url='
+   ```
+   dans `config.js`. Les requêtes passent alors par un relais public.
+
+2. **FACEIT a renommé ses champs.** La page de diagnostic affiche la réponse
+   brute : les valeurs sont cherchées par motif (`elo`, `win rate`, `headshot`,
+   `k/d`) partout dans le JSON, donc un renommage mineur ne casse rien — mais
+   un gros changement demande une mise à jour.
+
+### Avec une clé API officielle (plus stable)
+
+Crée une clé gratuite sur <https://developers.faceit.com> (application ▸ API
+key ▸ *server side*), colle-la dans `apiKey`. Le widget passe alors par l'API
+officielle `open.faceit.com` au lieu des points d'entrée publics du site.
+La clé reste **en clair dans `config.js`** : ne publie pas ce fichier ailleurs
+que dans ton dépôt privé, et révoque-la si tu la diffuses par erreur.
+
+### Pendant que rien n'a encore été lu
+
+Les dernières valeurs connues sont gardées dans le navigateur : si le réseau
+tombe en plein live, l'overlay continue d'afficher les derniers chiffres au
+lieu de se vider. Avant le tout premier chargement réussi, ce sont les tirets
+de `fallback` qui s'affichent.

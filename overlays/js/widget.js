@@ -56,6 +56,38 @@
     },
     timer: function () { return BB.timerChip(num('t', CFG.countdown.starting)); },
 
+    /* Statistiques FACEIT, rafraîchies toutes les 5 minutes */
+    faceit: function () {
+      var fb = (CFG.faceit || {}).fallback || {};
+      /* ?dir=col : les quatre chips empilées, pour un bord d'écran étroit */
+      var row = el('div', q('dir', 'row') === 'col' ? 'stack gap-12' : 'row gap-12');
+      var cells = {};
+      [['elo', 'elo'], ['winrate', 'winrate'], ['hs', '% hs'], ['kd', 'k/d']]
+        .forEach(function (pair) {
+          var chip = BB.gchip(pair[1], fb[pair[0]] || '—');
+          cells[pair[0]] = chip.querySelector('.v');
+          add(row, chip);
+        });
+      function paint(d) {
+        Object.keys(cells).forEach(function (k) {
+          if (d && d[k]) cells[k].textContent = d[k];
+        });
+      }
+      /* ?demo=1 : valeurs d'exemple, pour caler la position avant le live */
+      if (q('demo', '0') === '1') {
+        paint({ elo: '2 340', winrate: '58 %', hs: '48 %', kd: '1.24' });
+        return row;
+      }
+      if (global.BB_FACEIT) {
+        global.BB_FACEIT.watch(paint, function (e) {
+          /* On garde les dernières valeurs connues plutôt que de vider
+             l'overlay ; le détail est lisible dans la console d'OBS.      */
+          if (global.console) console.warn('[faceit]', e.message);
+        });
+      }
+      return row;
+    },
+
     /* --- phrases -------------------------------------------------------- */
     phrase: function () {
       var scene = q('scene', 'pause');

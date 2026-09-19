@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Autolt — Diagnostic FACEIT</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<style>
+  body{margin:0;padding:28px;background:#05070f;color:#eef4ff;
+    font:15px/1.6 'Inter',system-ui,sans-serif;}
+  h1{font:700 22px 'Archivo',sans-serif;margin:0 0 4px;}
+  p.sub{margin:0 0 22px;color:rgba(238,244,255,.6);}
+  .box{border:1px solid rgba(97,166,255,.24);border-radius:10px;
+    padding:16px 18px;margin-bottom:14px;background:#0a1020;}
+  .box h2{font:600 13px 'Inter',sans-serif;letter-spacing:.2em;text-transform:uppercase;
+    margin:0 0 10px;color:#61a6ff;}
+  code,pre{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;}
+  pre{white-space:pre-wrap;word-break:break-word;margin:0;color:rgba(238,244,255,.72);
+    max-height:260px;overflow:auto;}
+  .line{display:flex;gap:12px;align-items:baseline;padding:5px 0;
+    border-bottom:1px solid rgba(97,166,255,.1);}
+  .line:last-child{border-bottom:0;}
+  .k{flex:0 0 190px;color:rgba(238,244,255,.5);font-size:13px;}
+  .ok{color:#7ee7a8;} .ko{color:#ff8f8f;} .warn{color:#ffd27a;}
+  .stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+  .stat{border:2px solid #1f6bff;border-radius:8px;padding:10px 16px;min-width:120px;}
+  .stat .sk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(238,244,255,.45);}
+  .stat .sv{font:700 24px 'Archivo',sans-serif;}
+</style>
+<script src="../js/config.js"></script>
+<script src="../js/faceit.js"></script>
+</head>
+<body>
+<h1>Diagnostic FACEIT</h1>
+<p class="sub">Cette page dit exactement ce qui se passe quand l'overlay va chercher tes stats.
+  Ouvre-la dans ton navigateur <b>et</b> dans OBS (source navigateur) : les deux peuvent réagir différemment.</p>
+
+<div class="box"><h2>Configuration lue</h2><div id="cfg"></div></div>
+<div class="box"><h2>Requêtes</h2><div id="net"></div></div>
+<div class="box"><h2>Valeurs extraites</h2><div class="stats" id="vals"></div></div>
+<div class="box"><h2>Diagnostic</h2><div id="diag"></div></div>
+<div class="box"><h2>Réponse brute</h2><pre id="raw">…</pre></div>
+
+<script>
+const C = (window.BB_CONFIG || {}).faceit || {};
+const $ = (id) => document.getElementById(id);
+const line = (k, v, cls) =>
+  `<div class="line"><span class="k">${k}</span><span class="${cls || ''}"><code>${v}</code></span></div>`;
+
+$('cfg').innerHTML =
+  line('pseudo', C.nickname || '(vide)', C.nickname ? 'ok' : 'ko') +
+  line('jeu', C.game || 'cs2') +
+  line('clé API', C.apiKey ? 'définie' : 'aucune (mode public)', C.apiKey ? 'ok' : 'warn') +
+  line('proxy CORS', C.proxy || 'aucun') +
+  line('rafraîchissement', (C.refreshSeconds || 300) + ' s') +
+  line('origine de la page', location.origin === 'null' ? 'null (fichier local)' : location.origin);
+
+const log = [];
+function push(url, status, cls) { log.push(line(status, url, cls)); $('net').innerHTML = log.join(''); }
+
+/* On refait les appels un par un pour situer précisément l'échec. */
+async function probe(url, headers) {
+  try {
+    const r = await fetch(C.proxy ? C.proxy + encodeURIComponent(url) : url,
+      { headers: headers || {}, cache: 'no-store' });
+    push(url, 'HTTP ' + r.status, r.ok ? 'ok' : 'ko');
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (e) {
+    push(url, 'ÉCHEC — ' + e.message, 'ko');
+    return null;
+  }
+}
+
+(async function () {
+  const nick = C.nickname, game = C.game || 'cs2';
+  let blobs = [], failed = false;
+
+  if (!nick) {
+    $('diag').innerHTML = '<span class="ko">Aucun pseudo dans <code>config.js</code> → rien à chercher.</span>';
+    return;
+  }
+
+  if (C.apiKey) {
+    const h = { Authorization: 'Bearer ' + C.apiKey };
+    const p = await probe('https://open.faceit.com/data/v4/players?nickname=' +
+      encodeURIComponent(nick) + '&game=' + game, h);
+    if (p) { blobs.push(p);
+      const s = await probe('https://open.faceit.com/data/v4/players/' + p.player_id + '/stats/' + game, h);
+      if (s) blobs.push(s);
+    } else failed = true;
+  } else {
+    const res = await probe('https://www.faceit.com/api/users/v1/nicknames/' + encodeURIComponent(nick));
+    if (res) {
+      const p = res.payload || res; blobs.push(p);
+      const id = p.id || p.guid;
+      if (id) {
+        const s = await probe('https://api.faceit.com/stats/v1/stats/users/' + id + '/games/' + game);
+        if (s) blobs.push(s);
+      }
+    } else failed = true;
+  }
+
+  $('raw').textContent = blobs.length ? JSON.stringify(blobs, null, 1).slice(0, 6000) : '(rien reçu)';
+
+  const r = blobs.length ? await window.BB_FACEIT.load().then(x => x.data).catch(() => null) : null;
+  const vals = r || {};
+  $('vals').innerHTML = [['elo', 'ELO'], ['winrate', 'WINRATE'], ['hs', '% HS'], ['kd', 'K/D']]
+    .map(([k, l]) => `<div class="stat"><div class="sk">${l}</div><div class="sv">${vals[k] || '—'}</div></div>`)
+    .join('');
+
+  const found = ['elo', 'winrate', 'hs', 'kd'].filter(k => vals[k]).length;
+  let d;
+  if (failed && !C.proxy) {
+    d = '<span class="ko">Les requêtes ne passent pas.</span> Si le message dit ' +
+      '« Failed to fetch » ou « NetworkError », c\'est le navigateur qui bloque l\'appel ' +
+      '(politique CORS depuis un fichier local). Remède : dans <code>config.js</code>, ' +
+      'mets <code>proxy: \'https://api.allorigins.win/raw?url=\'</code> et recharge.';
+  } else if (failed) {
+    d = '<span class="ko">Requêtes en échec même avec le proxy.</span> Vérifie le pseudo ' +
+      '(<code>' + nick + '</code>) et ta connexion.';
+  } else if (found === 0) {
+    d = '<span class="warn">Les requêtes passent mais aucune valeur n\'a été reconnue.</span> ' +
+      'FACEIT a dû renommer ses champs : envoie-moi le contenu de « Réponse brute » ci-dessous.';
+  } else if (found < 4) {
+    d = '<span class="warn">' + found + ' valeur(s) sur 4 trouvées.</span> ' +
+      'Les autres manquent dans la réponse — envoie-moi « Réponse brute ».';
+  } else {
+    d = '<span class="ok">Tout fonctionne : les 4 valeurs sont récupérées.</span> ' +
+      'Le widget <code>faceit.html</code> les affichera et les rafraîchira toutes les ' +
+      ((C.refreshSeconds || 300) / 60) + ' min.';
+  }
+  $('diag').innerHTML = d;
+})();
+</script>
+</body>
+</html>

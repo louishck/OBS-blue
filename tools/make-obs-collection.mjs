@@ -44,7 +44,7 @@ const WIDGETS = {
   chatHaut:   { file: 'chat.html',    w: 408,  h: 858,  label: 'Cadre chat haut', q: ['h=810'] },
   cadreJeu:   { file: 'jeu.html',     w: 1488, h: 858,  label: 'Cadre jeu' },
   live:       { file: 'live.html',    w: 231,  h: 100,  label: 'Pastille live' },
-  infos:      { file: 'infos.html',   w: 511,  h: 100,  label: 'Infos partie' },
+  faceit:     { file: 'faceit.html',  w: 783,  h: 100,  label: 'Stats FACEIT' },
   minuterie:  { file: 'timer.html',   w: 283,  h: 110,  label: 'Minuterie' },
   alertes:    { file: 'alertes.html', w: 516,  h: 346,  label: 'Barres d’alerte' },
   pStarting:  { file: 'phrase.html',  w: 752,  h: 84,   label: 'Phrase / starting', q: ['scene=starting'] },
@@ -68,7 +68,7 @@ const SCENES = [
   { name: '🎮 Jeu', items: [
       { k: 'logoPetit', x: 262,        y: -32 },
       { k: 'live',      x: 500,        y: 0 },
-      { k: 'infos',     x: 1208,       y: 0 },
+      { k: 'faceit',    x: 1113,       y: 0 },
       { k: 'chat',      x: 1506,       y: 446 },
       { k: 'camera',    x: 1472,       y: 760, visible: false },
       { k: 'alertes',   x: 60,         y: 360, visible: false }
@@ -79,7 +79,7 @@ const SCENES = [
       { k: 'chatHaut',  x: 1496,       y: 116 },
       { k: 'logoPetit', x: -8,         y: -40 },
       { k: 'accroche',  x: 236,        y: 22 },
-      { k: 'infos',     x: 1370,       y: 0 },
+      { k: 'faceit',    x: 1113,       y: 0 },
       { k: 'reseaux',   x: cx('reseaux'), y: 966 }
   ] },
   { name: '⏳ Starting', items: [

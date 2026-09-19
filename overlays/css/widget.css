@@ -18,3 +18,9 @@ html,body{background:transparent;margin:0;overflow:hidden;}
 
 /* Les cadres gardent leur taille exacte à l'intérieur de la marge */
 .widget-host .nframe{flex:0 0 auto;}
+
+/* Le halo du logotype doit s'éteindre AVANT le bord de la source, sinon on
+   voit un rectangle plus clair sur les fonds clairs. On le resserre donc
+   pour qu'il tienne dans la marge.                                          */
+body.widget-logo .logotype .word{filter:drop-shadow(0 4px 16px var(--accent-soft,rgba(43,127,255,.35)));}
+body.widget-logo .logotype .crown{filter:drop-shadow(0 0 10px var(--accent-soft,rgba(43,127,255,.6)));}

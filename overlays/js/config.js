@@ -72,6 +72,20 @@ window.BB_CONFIG = {
     rail: 'chat'
   },
 
+  /* --- Statistiques FACEIT (widget faceit.html) --------------------------
+     Sans clé, les points d'entrée publics de faceit.com sont utilisés.
+     Si rien ne s'affiche, ouvre widgets/faceit-test.html : il dit pourquoi.  */
+  faceit: {
+    nickname: 'autolt_',       // le pseudo dans l'URL de ton profil FACEIT
+    game: 'cs2',
+    apiKey: '',                // clé de developers.faceit.com (facultative)
+    proxy: '',                 // en dernier recours si le navigateur bloque la
+                               // requête : 'https://api.allorigins.win/raw?url='
+    refreshSeconds: 300,       // rafraîchissement (5 min ; minimum 60 s)
+    /* Valeurs affichées tant qu'aucune donnée n'a pu être lue */
+    fallback: { elo: '—', winrate: '—', hs: '—', kd: '—' }
+  },
+
   /* --- Bandeau défilant (optionnel, non utilisé par défaut) -------------- */
   ticker: [
     'Bienvenue sur le live d’Autolt',
