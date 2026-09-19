@@ -73,6 +73,7 @@ Dans les phrases : `/` devient un séparateur bleu, `*mot*` met le mot en avant.
 | `?t=900` | durée de la minuterie, en secondes |
 | `?fx=low` | coupe les animations canvas (CPU ≈ 0) |
 | `?layout=frame` | scène de jeu encadrée au lieu du plein écran |
+| `?rail=cam` | remet la caméra à la place du chat sur la scène de jeu |
 | `?guides=1` | affiche les zones du HUD de CS2 (scène de jeu) |
 | `?pos=right\|top` | position des alertes / du chat |
 | `?w=…&h=…` | taille du cadre webcam ou chat |

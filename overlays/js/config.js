@@ -65,8 +65,11 @@ window.BB_CONFIG = {
     map: 'de_mirage',
     rank: '18 420 elo',
     /* 'fullscreen' = jeu en plein écran, overlay transparent dans les coins
-       'frame'      = jeu encadré + rail droit (caméra, chat, réseaux)      */
-    layout: 'fullscreen'
+       'frame'      = jeu encadré + rail droit                              */
+    layout: 'fullscreen',
+    /* Ce qu'on affiche dans l'encart de la scène de jeu :
+       'chat' = cadre de chat (défaut), 'cam' = cadre caméra               */
+    rail: 'chat'
   },
 
   /* --- Bandeau défilant (optionnel, non utilisé par défaut) -------------- */

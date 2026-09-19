@@ -41,6 +41,9 @@
     return g;
   }
 
+  /* 'chat' (défaut) ou 'cam' : ce qu'on met dans l'encart de la scène de jeu */
+  function rail() { return BB.q('rail', CFG.live.rail || 'chat'); }
+
   function liveFull(ctx) {
     var c = CFG.live, root = el('div', 'live-full');
     var tl = el('div', 'lf-top-l anim');
@@ -49,12 +52,20 @@
     var tr = el('div', 'lf-top-r anim');
     add(tr, BB.gchip('map', c.map));
 
-    var cam = el('div', 'lf-cam anim');
-    add(cam, BB.nframe(400, 225, { hint: 'caméra 400 × 225', tab: CFG.handle }));
-    var info = el('div', 'lf-info anim');
-    add(info, BB.gchip('elo', c.rank), BB.gchip('mode', c.mode));
+    add(tr, BB.gchip('elo', c.rank));
 
-    add(root, tl, tr, cam, info);
+    /* Encart latéral : le chat par défaut, la caméra avec ?rail=cam */
+    var side = el('div', 'lf-side anim');
+    if (rail() === 'cam') {
+      add(side, BB.nframe(400, 225, { hint: 'caméra 400 × 225', tab: CFG.handle }));
+    } else {
+      var cf = BB.nframe(360, 460, { hint: false, tab: S.chat.tab || 'Chat',
+        tabIcon: 'crown', tabTopLeft: true });
+      add(cf, chatLines());
+      add(side, cf);
+    }
+
+    add(root, tl, tr, side);
     add(ctx.content, root);
     if (BB.q('guides', '0') === '1') add(ctx.stage, guides());
   }
@@ -75,18 +86,30 @@
       tab: c.game
     }));
 
-    var cam = el('div', 'lf-cam anim');
-    add(cam, BB.nframe(360, 203, { hint: 'caméra 360 × 203', tab: CFG.handle }));
-
-    var chat = el('div', 'lf-chat anim');
-    var cf = BB.nframe(360, 544, { hint: false, tab: 'Chat', tabIcon: 'crown', tabTopLeft: true });
-    add(cf, chatLines());
-    add(chat, cf);
+    /* Rail droit : un seul grand cadre de chat (ou caméra + chat avec ?rail=cam) */
+    var railNodes = [];
+    if (rail() === 'cam') {
+      var cam = el('div', 'lf-cam anim');
+      add(cam, BB.nframe(360, 203, { hint: 'caméra 360 × 203', tab: CFG.handle }));
+      var chat = el('div', 'lf-chat anim');
+      var cf2 = BB.nframe(360, 544, { hint: false, tab: S.chat.tab || 'Chat',
+        tabIcon: 'crown', tabTopLeft: true });
+      add(cf2, chatLines());
+      add(chat, cf2);
+      railNodes = [cam, chat];
+    } else {
+      var full = el('div', 'lf-chat-full anim');
+      var cf = BB.nframe(360, 768, { hint: false, tab: S.chat.tab || 'Chat',
+        tabIcon: 'crown', tabTopLeft: true });
+      add(cf, chatLines());
+      add(full, cf);
+      railNodes = [full];
+    }
 
     var foot = el('div', 'lf-foot anim');
     add(foot, BB.socialRow());
 
-    add(root, head, chips, game, cam, chat, foot);
+    add.apply(null, [root, head, chips, game].concat(railNodes, [foot]));
     add(ctx.content, root);
   }
 

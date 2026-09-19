@@ -27,14 +27,14 @@
 .live-frame .lf-game{position:absolute;left:40px;top:140px;}
 .live-frame .lf-cam{position:absolute;left:1520px;top:140px;}
 .live-frame .lf-chat{position:absolute;left:1520px;top:406px;}
+.live-frame .lf-chat-full{position:absolute;left:1520px;top:140px;}
 .live-frame .lf-foot{position:absolute;left:0;right:0;bottom:36px;display:flex;
   align-items:center;justify-content:center;gap:56px;}
 
 /* Variante plein écran : uniquement les zones libres du HUD de CS2 */
 .live-full .lf-top-l{position:absolute;left:336px;top:18px;display:flex;gap:12px;}
 .live-full .lf-top-r{position:absolute;left:1232px;top:18px;display:flex;gap:12px;}
-.live-full .lf-cam{position:absolute;right:30px;bottom:96px;}
-.live-full .lf-info{position:absolute;right:30px;bottom:26px;display:flex;gap:12px;}
+.live-full .lf-side{position:absolute;right:30px;bottom:150px;}
 .live-full .lf-mark{position:absolute;left:36px;bottom:26px;opacity:.9;}
 
 /* Zones occupées par le HUD de CS2 (?guides=1) */

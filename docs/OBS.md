@@ -57,12 +57,16 @@ widget de chat — voir les tailles exactes plus bas.
 | Source           | Taille       | Position        |
 |------------------|--------------|-----------------|
 | Capture du jeu   | 1440 × 810   | x **40** / y **140** |
-| Caméra           | 360 × 203    | x **1520** / y **140** |
-| Widget de chat   | 360 × 544    | x **1520** / y **406** |
+| Widget de chat   | 360 × 768    | x **1520** / y **140** |
 
 **Scène de jeu, variante plein écran** (`live.html`) : le jeu occupe
-1920 × 1080, l'overlay se pose dessus. La caméra va dans le cadre en bas à
-droite : **400 × 225**, x **1490** / y **759**.
+1920 × 1080, l'overlay se pose dessus. Le chat va dans le cadre de droite :
+**360 × 460**, x **1530** / y **470**.
+
+> Tu préfères la caméra dans ce cadre ? Ajoute `?rail=cam` : la caméra revient
+> (360 × 203 en x 1520 / y 140 en encadré, 400 × 225 en bas à droite en plein
+> écran) et, en encadré, le chat reprend sa place dessous en 360 × 544
+> (x 1520 / y 406).
 Ajoute `?guides=1` à l'URL pour afficher en rouge les zones occupées par le HUD
 de CS2 (radar, score, killfeed, vie, équipement, munitions) et vérifier que
 rien ne se chevauche — pense à retirer le paramètre ensuite.
@@ -99,5 +103,6 @@ node tools/render-stinger.mjs signature    # une seule
 - **Machine modeste** : ajoute `?fx=low` → plus aucune animation canvas,
   la consommation CPU tombe à presque rien.
 - **Position des alertes** : `alerts.html?pos=right` ou `?pos=top`.
+- **Caméra plutôt que chat** sur la scène de jeu : `live.html?rail=cam`.
 - Les polices sont **embarquées** dans le pack : aucune connexion internet
   n'est nécessaire, et le rendu est identique sur n'importe quelle machine.
