@@ -1,0 +1,169 @@
+/* =========================================================================
+   COMPOSANTS — briques visuelles du pack (logotype, cadres néon, barres
+   d'alerte, panneaux réseaux, chip timer). Pilotés par les tokens du thème.
+   ========================================================================= */
+
+/* ---------- Logotype (couronne + signature) --------------------------- */
+.logotype{display:inline-flex;flex-direction:column;align-items:center;gap:2px;}
+.logotype .crown{
+  width:var(--crown-size,56px);height:auto;
+  fill:var(--accent);
+  filter:drop-shadow(0 0 16px var(--accent-soft,rgba(43,127,255,.6)));
+  margin-bottom:-6px;
+}
+.logotype .word{
+  font-family:var(--font-logo);
+  font-size:var(--logo-size,128px);
+  font-weight:var(--logo-weight,400);
+  line-height:1;
+  letter-spacing:var(--logo-tracking,0);
+  text-transform:var(--logo-case,none);
+  background:var(--logo-fill,linear-gradient(100deg,#fff 0%,#e8f0ff 36%,#3b86ff 64%,#1a4fd8 100%));
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 8px 34px var(--accent-soft,rgba(43,127,255,.35)));
+  padding:0 .08em .12em;
+}
+.logotype.sm{--logo-size:64px;--crown-size:30px;}
+.logotype.md{--logo-size:96px;--crown-size:42px;}
+.logotype.xl{--logo-size:164px;--crown-size:70px;}
+
+/* ---------- Accroche « STREAM // GAMING // GOOD VIBES » ---------------- */
+.tagline{
+  display:flex;align-items:center;gap:18px;
+  font-family:var(--font-ui);font-weight:600;
+  font-size:22px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--ink);
+}
+.tagline i{color:var(--accent);font-style:normal;font-weight:700;letter-spacing:.1em;}
+
+/* ---------- Sous-titre de scène (PAUSE / JE REVIENS BIENTÔT) ----------- */
+.sceneline{
+  display:flex;align-items:center;gap:20px;
+  font-family:var(--font-ui);font-weight:600;
+  font-size:30px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--ink);
+}
+.sceneline .hi{color:var(--accent-2);}
+.sceneline .sep{color:var(--accent);font-weight:400;}
+
+/* ---------- Cadre néon (caméra, chat, capture) ------------------------- */
+.nframe{
+  position:relative;
+  border:3px solid var(--accent);
+  border-radius:var(--frame-radius,18px);
+  background:var(--frame-bg,rgba(10,18,36,.32));
+  box-shadow:var(--frame-shadow,0 0 0 1px rgba(43,127,255,.2),0 0 42px rgba(43,127,255,.3),inset 0 0 50px rgba(43,127,255,.1));
+}
+.nframe .corner{position:absolute;width:44px;height:44px;border:6px solid var(--accent-2);pointer-events:none;}
+.nframe .corner.tl{top:-3px;left:-3px;border-right:0;border-bottom:0;border-radius:var(--frame-radius,18px) 0 0 0;}
+.nframe .corner.tr{top:-3px;right:-3px;border-left:0;border-bottom:0;border-radius:0 var(--frame-radius,18px) 0 0;}
+.nframe .corner.bl{bottom:-3px;left:-3px;border-right:0;border-top:0;border-radius:0 0 0 var(--frame-radius,18px);}
+.nframe .corner.br{bottom:-3px;right:-3px;border-left:0;border-top:0;border-radius:0 0 var(--frame-radius,18px) 0;}
+.nframe .hint{
+  position:absolute;inset:0;display:grid;place-items:center;text-align:center;
+  font-family:var(--font-mono);font-size:15px;letter-spacing:.22em;line-height:2;
+  color:var(--ink-faint);text-transform:uppercase;
+}
+/* Onglet (étiquette) accroché au cadre */
+.nframe .tab{
+  position:absolute;left:50%;bottom:-21px;transform:translateX(-50%);
+  display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 26px;
+  border:3px solid var(--accent);border-radius:10px;
+  background:var(--tab-bg,#070c18);
+  font-family:var(--font-ui);font-weight:700;font-size:16px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink);
+  white-space:nowrap;
+}
+.nframe .tab svg{width:20px;height:20px;fill:var(--accent);}
+.nframe.tab-tl .tab{left:34px;bottom:auto;top:-21px;transform:none;}
+
+/* ---------- Barre d'alerte (dernier follow / sub / don / cheer) -------- */
+.alerts-stack{display:flex;flex-direction:column;gap:22px;}
+.alertbar{display:flex;align-items:center;gap:-1px;}
+.alertbar .ico{
+  position:relative;z-index:2;
+  width:58px;height:58px;flex:0 0 58px;display:grid;place-items:center;
+  border:3px solid var(--accent);border-radius:12px;
+  background:var(--tab-bg,#070c18);
+  box-shadow:0 0 22px var(--accent-soft,rgba(43,127,255,.45));
+}
+.alertbar .ico svg{width:26px;height:26px;fill:var(--accent-2);}
+/* Le biseau est obtenu par deux calques (le clip-path mangerait la bordure) */
+.alertbar .bar{
+  position:relative;margin-left:-10px;height:52px;min-width:420px;
+  display:flex;align-items:center;padding:0 40px 0 46px;
+  background:var(--accent);
+  clip-path:polygon(0 0,100% 0,calc(100% - 26px) 100%,0 100%);
+  font-family:var(--font-ui);font-weight:600;font-size:17px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink);
+}
+.alertbar .bar::before{
+  content:'';position:absolute;inset:3px;
+  background:var(--bar-bg,rgba(7,12,24,.92));
+  clip-path:polygon(0 0,100% 0,calc(100% - 23px) 100%,0 100%);
+}
+.alertbar .bar > *{position:relative;z-index:1;}
+.alertbar .bar .who{color:var(--accent-2);margin-left:14px;letter-spacing:.14em;}
+
+/* ---------- Panneau profil / réseaux ----------------------------------- */
+.panel-rows{display:flex;flex-direction:column;gap:18px;width:520px;}
+.prow{
+  display:flex;align-items:center;gap:20px;height:64px;padding:0 22px;
+  border:3px solid var(--accent);border-radius:12px;
+  background:var(--bar-bg,rgba(7,12,24,.86));
+  box-shadow:0 0 26px rgba(43,127,255,.18);
+}
+.prow .box{
+  width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;
+  border:2px solid var(--accent);border-radius:9px;
+}
+.prow .box svg{width:24px;height:24px;fill:var(--accent-2);}
+.prow .lbl{
+  flex:1 1 auto;font-family:var(--font-ui);font-weight:600;font-size:19px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ink);
+}
+.prow .chev{width:18px;height:18px;fill:var(--accent);flex:0 0 18px;}
+
+/* ---------- Chip minuterie --------------------------------------------- */
+.timerchip{
+  position:relative;
+  display:inline-flex;align-items:center;gap:16px;height:62px;padding:0 46px;
+  background:var(--accent);
+  clip-path:polygon(22px 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,22px 100%,0 50%);
+  font-family:var(--font-display);font-weight:700;font-size:30px;
+  letter-spacing:.14em;color:var(--ink);font-variant-numeric:tabular-nums;
+  filter:drop-shadow(0 0 22px var(--accent-soft,rgba(43,127,255,.45)));
+}
+.timerchip::before{
+  content:'';position:absolute;inset:3px;
+  background:var(--bar-bg,rgba(7,12,24,.92));
+  clip-path:polygon(20px 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,20px 100%,0 50%);
+}
+.timerchip > *{position:relative;z-index:1;}
+.timerchip svg{width:24px;height:24px;fill:var(--accent-2);}
+
+/* ---------- Rangée de réseaux ------------------------------------------ */
+.social-row{display:flex;align-items:center;gap:40px;flex-wrap:wrap;}
+.social-row .s{display:inline-flex;align-items:center;gap:12px;}
+.social-row .s .box{
+  width:42px;height:42px;display:grid;place-items:center;
+  border:2px solid var(--accent);border-radius:9px;
+  background:var(--bar-bg,rgba(7,12,24,.6));
+}
+.social-row .s .box svg{width:22px;height:22px;fill:var(--ink);}
+.social-row .s .name{
+  font-family:var(--font-ui);font-weight:600;font-size:19px;letter-spacing:.04em;
+  color:var(--accent-2);
+}
+
+/* ---------- Bandeau d'info en jeu -------------------------------------- */
+.gchip{
+  display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 24px;
+  border:2px solid var(--accent);border-radius:10px;
+  background:var(--bar-bg,rgba(7,12,24,.82));
+  font-family:var(--font-ui);font-weight:600;font-size:16px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+}
+.gchip .k{color:var(--ink-faint);}
+.gchip .v{color:var(--accent-2);font-weight:700;}

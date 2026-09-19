@@ -1,0 +1,83 @@
+/* =========================================================================
+   SCENES — mise en page des 9 écrans du pack.
+   ========================================================================= */
+
+/* ---------- Composition centrée (starting / pause / ending / offline) --- */
+.hero{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:var(--hero-gap,38px);text-align:center;padding:0 120px;
+}
+.hero .logotype{margin-bottom:6px;}
+.hero .sub-note{
+  font-family:var(--font-ui);font-weight:600;font-size:18px;
+  letter-spacing:.34em;text-transform:uppercase;color:var(--ink-dim);
+}
+
+/* Couronne filigrane (scène de fin) */
+.watermark{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);
+  width:980px;opacity:.05;fill:var(--accent-2);pointer-events:none;
+}
+
+/* ---------- Scène 1 : live (jeu) --------------------------------------- */
+/* Variante « frame » : positions fixes, à reproduire à l'identique dans OBS */
+.live-frame .lf-head{position:absolute;left:44px;top:34px;display:flex;align-items:center;gap:34px;}
+.live-frame .lf-chips{position:absolute;right:44px;top:34px;display:flex;align-items:center;gap:14px;}
+.live-frame .lf-game{position:absolute;left:40px;top:140px;}
+.live-frame .lf-cam{position:absolute;left:1520px;top:140px;}
+.live-frame .lf-chat{position:absolute;left:1520px;top:406px;}
+.live-frame .lf-foot{position:absolute;left:0;right:0;bottom:36px;display:flex;
+  align-items:center;justify-content:center;gap:56px;}
+
+/* Variante plein écran : uniquement les zones libres du HUD de CS2 */
+.live-full .lf-top-l{position:absolute;left:336px;top:18px;display:flex;gap:12px;}
+.live-full .lf-top-r{position:absolute;left:1232px;top:18px;display:flex;gap:12px;}
+.live-full .lf-cam{position:absolute;right:30px;bottom:96px;}
+.live-full .lf-info{position:absolute;right:30px;bottom:26px;display:flex;gap:12px;}
+.live-full .lf-mark{position:absolute;left:36px;bottom:26px;opacity:.9;}
+
+/* Zones occupées par le HUD de CS2 (?guides=1) */
+.guides{position:absolute;inset:0;pointer-events:none;z-index:9;}
+.guides .zone{position:absolute;border:2px dashed rgba(255,80,80,.75);
+  background:rgba(255,80,80,.09);}
+.guides .zone span{position:absolute;top:6px;left:8px;font:600 13px/1 var(--font-mono);
+  letter-spacing:.14em;color:#ff8f8f;text-transform:uppercase;}
+
+/* ---------- Scène 4 : webcam ------------------------------------------- */
+.cam-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+
+/* ---------- Scène 6 : alertes ------------------------------------------ */
+.alerts-pos{position:absolute;left:84px;top:50%;transform:translateY(-50%);}
+.alerts-pos.right{left:auto;right:84px;}
+.alerts-pos.top{top:84px;transform:none;}
+
+/* ---------- Scène 7 : chat --------------------------------------------- */
+.chat-pos{position:absolute;left:96px;top:50%;transform:translateY(-50%);}
+.chat-pos.right{left:auto;right:96px;}
+.chat-lines{position:absolute;inset:26px 22px 22px;display:flex;flex-direction:column;
+  gap:14px;justify-content:flex-end;}
+.chat-lines .msg{font-family:var(--font-ui);font-size:19px;line-height:1.35;color:var(--ink-dim);}
+.chat-lines .msg .u{font-weight:700;color:var(--accent-2);}
+.chat-lines .sys{font-family:var(--font-mono);font-size:13px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-faint);}
+
+/* ---------- Scène 9 : panneaux ------------------------------------------ */
+.panels-pos{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:center;gap:46px;}
+
+/* ---------- Divers ------------------------------------------------------ */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
+.stats .s{background:var(--bg-0);padding:14px 16px;display:flex;flex-direction:column;gap:6px;}
+.stats .s .k{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-faint);}
+.stats .s .v{font-family:var(--font-display);font-weight:700;font-size:30px;line-height:1;}
+
+/* Fond factice pour prévisualiser une scène transparente (?bg=demo) */
+.stage.demo-bg{
+  background:
+    radial-gradient(90% 70% at 30% 20%, #26313d 0%, rgba(38,49,61,0) 60%),
+    radial-gradient(80% 70% at 78% 82%, #1d2a36 0%, rgba(29,42,54,0) 62%),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 2px,transparent 2px 14px),
+    linear-gradient(180deg,#0f151b,#080b0f);
+}

@@ -1,0 +1,61 @@
+/* =========================================================================
+   DA 2 — SIGNATURE
+   Noir bleuté, coups de pinceau électriques, logotype manuscrit + couronne,
+   cadres néon à coins renforcés. (La DA de la référence.)
+   ========================================================================= */
+:root{
+  --bg-0:#04060e; --bg-1:#070d1c; --bg-2:#0d1b38;
+  --ink:#f4f8ff; --ink-dim:rgba(244,248,255,.66); --ink-faint:rgba(244,248,255,.34);
+  --accent:#1f6bff; --accent-2:#61a6ff; --accent-soft:rgba(43,127,255,.55);
+  --live:#ff4155;
+  --line:rgba(97,166,255,.24); --line-strong:rgba(97,166,255,.5);
+  --glow:0 0 44px rgba(31,107,255,.55);
+
+  --font-display:'Archivo',system-ui,sans-serif;
+  --font-ui:'Inter',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --font-logo:'Kaushan Script',cursive;
+  --logo-fill:linear-gradient(104deg,#ffffff 0%,#dbe8ff 30%,#4b8dff 58%,#1246c8 100%);
+  --logo-case:none; --logo-weight:400; --logo-tracking:0;
+
+  --radius:10px; --frame-radius:18px;
+  --tab-bg:#060b16;
+  --bar-bg:rgba(6,11,22,.88);
+  --frame-bg:rgba(10,20,42,.3);
+  --panel-bg:rgba(6,11,22,.8);
+  --pill-bg:rgba(10,20,42,.6);
+  --chip-bg:rgba(6,11,22,.86);
+  --cam-bg:rgba(10,20,42,.35);
+  --mark-bg:rgba(31,107,255,.14);
+  --time-shadow:0 0 50px rgba(31,107,255,.5);
+}
+
+/* Fond : nuit bleue + halo central ; les pinceaux sont peints en canvas */
+.bg-a{position:absolute;inset:0;
+  background:
+    radial-gradient(90% 70% at 50% 34%, #123064 0%, rgba(18,48,100,0) 62%),
+    radial-gradient(70% 60% at 8% 92%, #0d2450 0%, rgba(13,36,80,0) 60%),
+    linear-gradient(165deg,#04060e 0%,#060c1b 45%,#03050c 100%);
+}
+.bg-b{position:absolute;inset:0;
+  background-image:radial-gradient(rgba(97,166,255,.10) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:radial-gradient(110% 90% at 50% 40%,#000 10%,transparent 72%);
+  opacity:.5;
+}
+.bg-c{position:absolute;inset:0;
+  background:radial-gradient(120% 100% at 50% 50%,transparent 38%,rgba(0,0,0,.78) 100%);
+}
+
+/* Titres */
+.title{font-family:var(--font-display);font-weight:800;letter-spacing:-.01em;}
+.kicker{color:var(--accent-2);letter-spacing:.4em;}
+.panel{border-radius:12px;box-shadow:0 0 30px rgba(31,107,255,.12);}
+.panel-head{letter-spacing:.26em;color:var(--accent-2);}
+.pill{border-radius:10px;border-color:var(--accent);border-width:2px;}
+.pill .val{color:var(--accent-2);}
+.live-dot{background:var(--live);}
+.progress > i{background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  box-shadow:0 0 18px var(--accent);}
+.stats .s{background:var(--bar-bg);}
+.ticker{background:var(--bar-bg);border-color:var(--line);}

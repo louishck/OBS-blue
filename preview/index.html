@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autolt — Pack OBS</title>
+<link rel="stylesheet" href="../overlays/css/fonts.css">
+<style>
+  :root{
+    --bg:#05070f; --card:#0a1020; --line:rgba(97,166,255,.2);
+    --ink:#eef4ff; --dim:rgba(238,244,255,.6); --faint:rgba(238,244,255,.34);
+    --accent:#2b7fff; --accent-2:#61a6ff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    background-image:radial-gradient(70% 50% at 50% 0%,#0d1c3c 0%,rgba(13,28,60,0) 60%);}
+  header{padding:54px 48px 26px;max-width:1500px;margin:0 auto;}
+  .logo{font-family:'Kaushan Script',cursive;font-size:56px;line-height:1;
+    background:linear-gradient(104deg,#fff 0%,#dbe8ff 30%,#4b8dff 60%,#1246c8 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  h1{font-size:20px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+    margin:14px 0 8px;color:var(--accent-2);}
+  p.lead{margin:0;color:var(--dim);font-size:16px;line-height:1.6;max-width:760px;}
+  nav{display:flex;gap:10px;padding:26px 48px 0;max-width:1500px;margin:0 auto;flex-wrap:wrap;}
+  nav button{
+    font:600 14px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--dim);background:transparent;border:2px solid var(--line);
+    border-radius:10px;padding:14px 22px;cursor:pointer;transition:.15s;}
+  nav button:hover{color:var(--ink);border-color:var(--accent);}
+  nav button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff;}
+  main{max-width:1500px;margin:0 auto;padding:30px 48px 80px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:26px;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column;}
+  .card img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#05070f;display:block;
+    border-bottom:1px solid var(--line);}
+  .card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .card h2{margin:0;font-size:17px;letter-spacing:.14em;text-transform:uppercase;}
+  .card .num{color:var(--accent-2);font-family:'JetBrains Mono',monospace;margin-right:8px;}
+  .card p{margin:0;color:var(--dim);font-size:14px;line-height:1.55;}
+  .card code{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--accent-2);
+    background:rgba(43,127,255,.1);padding:3px 7px;border-radius:5px;}
+  .card .foot{margin-top:auto;display:flex;gap:10px;align-items:center;padding-top:6px;}
+  .card a{font:600 13px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+    color:#fff;background:var(--accent);padding:11px 16px;border-radius:8px;text-decoration:none;}
+  .card a.ghost{background:transparent;border:1px solid var(--line);color:var(--dim);}
+  footer{max-width:1500px;margin:0 auto;padding:0 48px 80px;color:var(--faint);font-size:14px;line-height:1.7;}
+  footer b{color:var(--dim);}
+  @media(max-width:700px){header,nav,main,footer{padding-left:20px;padding-right:20px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Autolt</div>
+  <h1>Pack OBS — 9 scènes × 3 directions artistiques</h1>
+  <p class="lead">Chaque scène est une page web à ajouter dans OBS en <b>Source navigateur</b>,
+    en 1920 × 1080. Change de direction artistique en ajoutant <code>?da=…</code> à l'URL.
+    Clique sur une vignette pour ouvrir la scène en vrai.</p>
+</header>
+<nav id="tabs"></nav>
+<main><div class="grid" id="grid"></div></main>
+<footer>
+  <b>Transitions :</b> les stingers prêts à l'emploi sont dans <code>dist/stingers/</code>
+  (WebM transparent, point de transition 550 ms).<br>
+  <b>Personnalisation :</b> tout se règle dans <code>overlays/js/config.js</code>.
+</footer>
+<script>
+const DAS = [
+  { id:'signature', name:'Signature', desc:'Logotype manuscrit, couronne, coups de pinceau bleus' },
+  { id:'cobalt',    name:'Cobalt',    desc:'HUD e-sport, bleu électrique, panneaux biseautés' },
+  { id:'mono',      name:'Mono',      desc:'Noir & blanc brutaliste, typo massive, grain' }
+];
+const SCENES = [
+  { n:1, id:'live',  shot:'live',       title:'Scène principale (jeu)',
+    q:'?layout=fullscreen', d:'Overlay transparent posé sur la capture du jeu. Les éléments se placent dans les zones libres du HUD de CS2 — ajoute <code>&guides=1</code> pour les visualiser.' },
+  { n:1, id:'live',  shot:'live-frame', title:'Scène principale (encadrée)',
+    q:'?layout=frame', d:'Variante encadrée : capture du jeu <code>1440 × 810</code> en <code>x 40 / y 140</code>, rail caméra + chat à droite.' },
+  { n:2, id:'pause', shot:'pause', title:'Scène BRB (pause)', q:'', d:'Écran de pause plein écran.' },
+  { n:3, id:'starting', shot:'starting', title:'Scène starting', q:'',
+    d:'Écran de lancement avec minuterie. Durée : <code>?t=600</code> (secondes).' },
+  { n:4, id:'webcam', shot:'webcam', title:'Scène webcam', q:'',
+    d:'Cadre caméra transparent à superposer à ta source vidéo. Taille : <code>?w=1280&h=720</code>.' },
+  { n:5, id:'ending', shot:'ending', title:'Scène intermission / fin', q:'', d:'Écran de fin de live.' },
+  { n:6, id:'alerts', shot:'alerts', title:'Overlay infos / alertes', q:'',
+    d:'Barres « dernier follow / sub / don / cheer », transparentes. Position : <code>?pos=right</code> ou <code>?pos=top</code>.' },
+  { n:7, id:'chat', shot:'chat', title:'Panneau chat', q:'',
+    d:'Cadre transparent à poser autour de ton widget de chat. <code>?w=420&h=760&pos=right</code>.' },
+  { n:8, id:'offline', shot:'offline', title:'Scène offline', q:'', d:'Écran hors ligne / bannière de chaîne.' },
+  { n:9, id:'panels', shot:'panels', title:'Panneau profil / réseaux', q:'', d:'Liste des réseaux, utilisable aussi en panneau Twitch.' },
+  { n:'T', id:'transition', shot:'transition', title:'Transition (stinger)', q:'',
+    d:'Aperçu animé. Le fichier WebM transparent est dans <code>dist/stingers/</code>.' }
+];
+const tabs = document.getElementById('tabs'), grid = document.getElementById('grid');
+let current = DAS[0].id;
+DAS.forEach(da => {
+  const b = document.createElement('button');
+  b.textContent = da.name; b.title = da.desc;
+  b.onclick = () => { current = da.id; render(); };
+  b.dataset.da = da.id;
+  tabs.appendChild(b);
+});
+function render(){
+  [...tabs.children].forEach(b => b.setAttribute('aria-selected', b.dataset.da === current));
+  grid.innerHTML = '';
+  SCENES.forEach(s => {
+    const sep = s.q ? '&' : '?';
+    const url = `../overlays/${s.id}.html${s.q}${sep}da=${current}`;
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <a href="${url}" target="_blank" style="background:none;padding:0">
+        <img src="shots/${current}-${s.shot}.jpg" alt="${s.title}" loading="lazy"></a>
+      <div class="body">
+        <h2><span class="num">${s.n}</span>${s.title}</h2>
+        <p>${s.d}</p>
+        <div class="foot">
+          <a href="${url}" target="_blank">Ouvrir</a>
+          <a class="ghost" href="shots/${current}-${s.shot}.jpg" target="_blank">Image</a>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+render();
+</script>
+</body>
+</html>

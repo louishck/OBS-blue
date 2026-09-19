@@ -1,0 +1,14 @@
+{
+  "name": "autolt-overlays",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Habillage OBS (overlays + stingers) pour le stream Autolt",
+  "scripts": {
+    "stingers": "node tools/render-stinger.mjs",
+    "shots": "node tools/screenshot.mjs",
+    "obs": "node tools/make-obs-collection.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}
