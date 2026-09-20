@@ -35,22 +35,22 @@ const DA_Q = DA === 'signature' ? null : `da=${DA}`;   // signature = valeur par
 const WIDGETS = {
   fond:       { file: 'bg.html',      w: 1920, h: 1080, label: 'Fond' },
   logo:       { file: 'logo.html',    w: 538,  h: 332,  label: 'Logotype' },
-  logoPetit:  { file: 'logo.html',    w: 274,  h: 193,  label: 'Logotype petit', q: ['size=sm'] },
+  logoPetit:  { file: 'logo-petit.html', w: 274, h: 193, label: 'Logotype petit' },
   accroche:   { file: 'tagline.html', w: 648,  h: 74,   label: 'Accroche' },
   reseaux:    { file: 'socials.html', w: 655,  h: 90,   label: 'Réseaux' },
   panneaux:   { file: 'panels.html',  w: 568,  h: 440,  label: 'Panneau réseaux' },
   camera:     { file: 'cam.html',     w: 448,  h: 273,  label: 'Cadre caméra' },
   chat:       { file: 'chat.html',    w: 408,  h: 608,  label: 'Cadre chat' },
-  chatHaut:   { file: 'chat.html',    w: 408,  h: 858,  label: 'Cadre chat haut', q: ['h=810'] },
+  chatHaut:   { file: 'chat-haut.html', w: 408, h: 858, label: 'Cadre chat haut' },
   cadreJeu:   { file: 'jeu.html',     w: 1488, h: 858,  label: 'Cadre jeu' },
   live:       { file: 'live.html',    w: 231,  h: 100,  label: 'Pastille live' },
   faceit:     { file: 'faceit.html',  w: 783,  h: 100,  label: 'Stats FACEIT' },
   minuterie:  { file: 'timer.html',   w: 283,  h: 110,  label: 'Minuterie' },
   alertes:    { file: 'alertes.html', w: 516,  h: 346,  label: 'Barres d’alerte' },
-  pStarting:  { file: 'phrase.html',  w: 752,  h: 84,   label: 'Phrase / starting', q: ['scene=starting'] },
-  pPause:     { file: 'phrase.html',  w: 693,  h: 84,   label: 'Phrase / pause',    q: ['scene=pause'] },
-  pFin:       { file: 'phrase.html',  w: 586,  h: 84,   label: 'Phrase / fin',      q: ['scene=ending'] },
-  pOffline:   { file: 'phrase.html',  w: 585,  h: 84,   label: 'Phrase / offline',  q: ['scene=offline'] }
+  pStarting:  { file: 'phrase-starting.html', w: 752, h: 84, label: 'Phrase / starting' },
+  pPause:     { file: 'phrase-pause.html',    w: 693, h: 84, label: 'Phrase / pause' },
+  pFin:       { file: 'phrase-fin.html',      w: 586, h: 84, label: 'Phrase / fin' },
+  pOffline:   { file: 'phrase-offline.html',  w: 585, h: 84, label: 'Phrase / offline' }
 };
 
 /* Centre horizontalement un widget sur le canevas 1920 */

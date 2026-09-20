@@ -54,7 +54,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Fond",
-      "uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+      "uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -91,7 +91,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Logotype",
-      "uuid": "5f489485-8c49-4bb4-8e5e-d1bec20d78cc",
+      "uuid": "7300175a-c68b-4ede-bf18-752ba7105c81",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -128,13 +128,13 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Logotype petit",
-      "uuid": "76b52513-52d4-4b2f-af3f-05befc7e0a77",
+      "uuid": "2fcdf793-f3af-4e41-a032-f457d2d511fb",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": false,
-        "local_file": "/home/user/brigade-brico/overlays/widgets/logo.html",
-        "url": "file:///home/user/brigade-brico/overlays/widgets/logo.html?size=sm",
+        "is_local_file": true,
+        "local_file": "/home/user/brigade-brico/overlays/widgets/logo-petit.html",
+        "url": "",
         "width": 274,
         "height": 193,
         "fps_custom": false,
@@ -165,7 +165,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Accroche",
-      "uuid": "ff5db375-b6ce-4d3e-90ea-bc4aa5f0f28e",
+      "uuid": "6bf274cf-3aab-4779-9de3-4f50b40df40a",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -202,7 +202,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Réseaux",
-      "uuid": "d0edef09-ac1e-4f8e-b772-684789509cb2",
+      "uuid": "c3eaac97-a5f6-4b3f-8458-7ea25281346e",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -239,7 +239,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Panneau réseaux",
-      "uuid": "95d7ad05-b7d5-4c91-93be-7315ad1a9e41",
+      "uuid": "d0aef2aa-d813-4f32-96f7-f32b67f9a865",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -276,7 +276,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Cadre caméra",
-      "uuid": "4c266a84-d2a5-4fd1-a593-49b3ce1e794f",
+      "uuid": "8fb211c6-96a5-4d11-a7e5-a52e6a0bff1c",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -313,7 +313,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Cadre chat",
-      "uuid": "88411628-382c-448d-8b39-9c78c21dbcb6",
+      "uuid": "2dca117e-6a0d-4a01-a457-0f24d2465064",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -350,13 +350,13 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Cadre chat haut",
-      "uuid": "b1ac8a0b-800f-453f-9106-36366b2e77a9",
+      "uuid": "2514f96c-6007-4df1-ab57-13d1a1c86d40",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": false,
-        "local_file": "/home/user/brigade-brico/overlays/widgets/chat.html",
-        "url": "file:///home/user/brigade-brico/overlays/widgets/chat.html?h=810",
+        "is_local_file": true,
+        "local_file": "/home/user/brigade-brico/overlays/widgets/chat-haut.html",
+        "url": "",
         "width": 408,
         "height": 858,
         "fps_custom": false,
@@ -387,7 +387,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Cadre jeu",
-      "uuid": "52e4720c-8df5-49a6-87b6-885de77526bb",
+      "uuid": "1e849ee7-dd53-4c0c-b2d2-899c24c39172",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -424,7 +424,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Pastille live",
-      "uuid": "cc8ee55f-8546-4110-9257-1ad1a328bc17",
+      "uuid": "a8cfca8e-92d7-4f79-bbea-7a931634e81b",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -461,7 +461,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Stats FACEIT",
-      "uuid": "0cf1034f-72e3-4a18-8c1b-258204da37bf",
+      "uuid": "4f56b74d-4195-4dca-b2fd-004ce60e8299",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -498,7 +498,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Minuterie",
-      "uuid": "bc767a8e-74c9-43ee-8444-5b99d7eec33c",
+      "uuid": "ddfaf756-64fc-4f88-8623-4f4316416b7a",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -535,7 +535,7 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Barres d’alerte",
-      "uuid": "12eb3465-9f96-4250-bc0a-f3b1fdfff77c",
+      "uuid": "4fe95ad6-a8a7-43a1-bdc3-90b912fc5255",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
@@ -572,13 +572,13 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Phrase / starting",
-      "uuid": "3b5493bf-0426-44ab-b340-1bf635291043",
+      "uuid": "938583be-60a1-4304-b90a-c00f3836c072",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": false,
-        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase.html",
-        "url": "file:///home/user/brigade-brico/overlays/widgets/phrase.html?scene=starting",
+        "is_local_file": true,
+        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase-starting.html",
+        "url": "",
         "width": 752,
         "height": 84,
         "fps_custom": false,
@@ -609,13 +609,13 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Phrase / pause",
-      "uuid": "8a3afa9b-9922-4db0-90c1-606ac429da57",
+      "uuid": "dcfde56a-a9bd-4b8f-ad57-a3ca65eb5e7a",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": false,
-        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase.html",
-        "url": "file:///home/user/brigade-brico/overlays/widgets/phrase.html?scene=pause",
+        "is_local_file": true,
+        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase-pause.html",
+        "url": "",
         "width": 693,
         "height": 84,
         "fps_custom": false,
@@ -646,13 +646,13 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Phrase / fin",
-      "uuid": "24f0c083-1198-43e2-b9dc-7ac4f980481c",
+      "uuid": "3b13bbfc-f193-4d08-b873-a5ac85896943",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": false,
-        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase.html",
-        "url": "file:///home/user/brigade-brico/overlays/widgets/phrase.html?scene=ending",
+        "is_local_file": true,
+        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase-fin.html",
+        "url": "",
         "width": 586,
         "height": 84,
         "fps_custom": false,
@@ -683,13 +683,13 @@
     {
       "prev_ver": 520093699,
       "name": "Autolt · Phrase / offline",
-      "uuid": "ff322f6d-950f-4639-ade2-0fea284f42e1",
+      "uuid": "beede7da-964c-4959-a509-44b3d87d3d80",
       "id": "browser_source",
       "versioned_id": "browser_source",
       "settings": {
-        "is_local_file": false,
-        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase.html",
-        "url": "file:///home/user/brigade-brico/overlays/widgets/phrase.html?scene=offline",
+        "is_local_file": true,
+        "local_file": "/home/user/brigade-brico/overlays/widgets/phrase-offline.html",
+        "url": "",
         "width": 585,
         "height": 84,
         "fps_custom": false,
@@ -720,7 +720,7 @@
     {
       "prev_ver": 520093699,
       "name": "🎮 Jeu",
-      "uuid": "27484576-c323-4722-aec5-170be1d30851",
+      "uuid": "297f7f91-b665-4352-afdc-7e3f68694704",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -729,7 +729,7 @@
         "items": [
           {
             "name": "Autolt · Barres d’alerte",
-            "source_uuid": "12eb3465-9f96-4250-bc0a-f3b1fdfff77c",
+            "source_uuid": "4fe95ad6-a8a7-43a1-bdc3-90b912fc5255",
             "visible": false,
             "locked": false,
             "rot": 0,
@@ -767,7 +767,7 @@
           },
           {
             "name": "Autolt · Cadre caméra",
-            "source_uuid": "4c266a84-d2a5-4fd1-a593-49b3ce1e794f",
+            "source_uuid": "8fb211c6-96a5-4d11-a7e5-a52e6a0bff1c",
             "visible": false,
             "locked": false,
             "rot": 0,
@@ -805,7 +805,7 @@
           },
           {
             "name": "Autolt · Cadre chat",
-            "source_uuid": "88411628-382c-448d-8b39-9c78c21dbcb6",
+            "source_uuid": "2dca117e-6a0d-4a01-a457-0f24d2465064",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -843,7 +843,7 @@
           },
           {
             "name": "Autolt · Stats FACEIT",
-            "source_uuid": "0cf1034f-72e3-4a18-8c1b-258204da37bf",
+            "source_uuid": "4f56b74d-4195-4dca-b2fd-004ce60e8299",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -881,7 +881,7 @@
           },
           {
             "name": "Autolt · Pastille live",
-            "source_uuid": "cc8ee55f-8546-4110-9257-1ad1a328bc17",
+            "source_uuid": "a8cfca8e-92d7-4f79-bbea-7a931634e81b",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -919,7 +919,7 @@
           },
           {
             "name": "Autolt · Logotype petit",
-            "source_uuid": "76b52513-52d4-4b2f-af3f-05befc7e0a77",
+            "source_uuid": "2fcdf793-f3af-4e41-a032-f457d2d511fb",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -977,7 +977,7 @@
     {
       "prev_ver": 520093699,
       "name": "🖼 Jeu encadré",
-      "uuid": "5ec6e993-a07e-4ca1-99d5-75d683364580",
+      "uuid": "29774869-0cbf-4de3-8243-bfe8ca41c67b",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -986,7 +986,7 @@
         "items": [
           {
             "name": "Autolt · Réseaux",
-            "source_uuid": "d0edef09-ac1e-4f8e-b772-684789509cb2",
+            "source_uuid": "c3eaac97-a5f6-4b3f-8458-7ea25281346e",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1024,7 +1024,7 @@
           },
           {
             "name": "Autolt · Stats FACEIT",
-            "source_uuid": "0cf1034f-72e3-4a18-8c1b-258204da37bf",
+            "source_uuid": "4f56b74d-4195-4dca-b2fd-004ce60e8299",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1062,7 +1062,7 @@
           },
           {
             "name": "Autolt · Accroche",
-            "source_uuid": "ff5db375-b6ce-4d3e-90ea-bc4aa5f0f28e",
+            "source_uuid": "6bf274cf-3aab-4779-9de3-4f50b40df40a",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1100,7 +1100,7 @@
           },
           {
             "name": "Autolt · Logotype petit",
-            "source_uuid": "76b52513-52d4-4b2f-af3f-05befc7e0a77",
+            "source_uuid": "2fcdf793-f3af-4e41-a032-f457d2d511fb",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1138,7 +1138,7 @@
           },
           {
             "name": "Autolt · Cadre chat haut",
-            "source_uuid": "b1ac8a0b-800f-453f-9106-36366b2e77a9",
+            "source_uuid": "2514f96c-6007-4df1-ab57-13d1a1c86d40",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1176,7 +1176,7 @@
           },
           {
             "name": "Autolt · Cadre jeu",
-            "source_uuid": "52e4720c-8df5-49a6-87b6-885de77526bb",
+            "source_uuid": "1e849ee7-dd53-4c0c-b2d2-899c24c39172",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1214,7 +1214,7 @@
           },
           {
             "name": "Autolt · Fond",
-            "source_uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+            "source_uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1272,7 +1272,7 @@
     {
       "prev_ver": 520093699,
       "name": "⏳ Starting",
-      "uuid": "873a273f-fa4e-49ae-ba8c-84a9c320077e",
+      "uuid": "31ffb727-a92f-4998-8297-ced133380853",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -1281,7 +1281,7 @@
         "items": [
           {
             "name": "Autolt · Minuterie",
-            "source_uuid": "bc767a8e-74c9-43ee-8444-5b99d7eec33c",
+            "source_uuid": "ddfaf756-64fc-4f88-8623-4f4316416b7a",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1319,7 +1319,7 @@
           },
           {
             "name": "Autolt · Phrase / starting",
-            "source_uuid": "3b5493bf-0426-44ab-b340-1bf635291043",
+            "source_uuid": "938583be-60a1-4304-b90a-c00f3836c072",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1357,7 +1357,7 @@
           },
           {
             "name": "Autolt · Logotype",
-            "source_uuid": "5f489485-8c49-4bb4-8e5e-d1bec20d78cc",
+            "source_uuid": "7300175a-c68b-4ede-bf18-752ba7105c81",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1395,7 +1395,7 @@
           },
           {
             "name": "Autolt · Fond",
-            "source_uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+            "source_uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1453,7 +1453,7 @@
     {
       "prev_ver": 520093699,
       "name": "⏸ Pause",
-      "uuid": "ea77ecd1-c8d9-46b4-ba0e-513bfd214a2a",
+      "uuid": "73f66343-2fd7-4b77-b612-959374f0d00c",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -1462,7 +1462,7 @@
         "items": [
           {
             "name": "Autolt · Réseaux",
-            "source_uuid": "d0edef09-ac1e-4f8e-b772-684789509cb2",
+            "source_uuid": "c3eaac97-a5f6-4b3f-8458-7ea25281346e",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1500,7 +1500,7 @@
           },
           {
             "name": "Autolt · Phrase / pause",
-            "source_uuid": "8a3afa9b-9922-4db0-90c1-606ac429da57",
+            "source_uuid": "dcfde56a-a9bd-4b8f-ad57-a3ca65eb5e7a",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1538,7 +1538,7 @@
           },
           {
             "name": "Autolt · Logotype",
-            "source_uuid": "5f489485-8c49-4bb4-8e5e-d1bec20d78cc",
+            "source_uuid": "7300175a-c68b-4ede-bf18-752ba7105c81",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1576,7 +1576,7 @@
           },
           {
             "name": "Autolt · Fond",
-            "source_uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+            "source_uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1634,7 +1634,7 @@
     {
       "prev_ver": 520093699,
       "name": "👋 Fin",
-      "uuid": "60efb702-4175-495a-bea1-a9b944923ef9",
+      "uuid": "73119a54-3721-4277-ae49-11ea5098dcea",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -1643,7 +1643,7 @@
         "items": [
           {
             "name": "Autolt · Réseaux",
-            "source_uuid": "d0edef09-ac1e-4f8e-b772-684789509cb2",
+            "source_uuid": "c3eaac97-a5f6-4b3f-8458-7ea25281346e",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1681,7 +1681,7 @@
           },
           {
             "name": "Autolt · Phrase / fin",
-            "source_uuid": "24f0c083-1198-43e2-b9dc-7ac4f980481c",
+            "source_uuid": "3b13bbfc-f193-4d08-b873-a5ac85896943",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1719,7 +1719,7 @@
           },
           {
             "name": "Autolt · Logotype",
-            "source_uuid": "5f489485-8c49-4bb4-8e5e-d1bec20d78cc",
+            "source_uuid": "7300175a-c68b-4ede-bf18-752ba7105c81",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1757,7 +1757,7 @@
           },
           {
             "name": "Autolt · Fond",
-            "source_uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+            "source_uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1815,7 +1815,7 @@
     {
       "prev_ver": 520093699,
       "name": "📴 Offline",
-      "uuid": "18750fb2-bcac-4c99-b186-6917fcb192cd",
+      "uuid": "f2e620db-6ac3-4d1b-a368-fc4681461e63",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -1824,7 +1824,7 @@
         "items": [
           {
             "name": "Autolt · Réseaux",
-            "source_uuid": "d0edef09-ac1e-4f8e-b772-684789509cb2",
+            "source_uuid": "c3eaac97-a5f6-4b3f-8458-7ea25281346e",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1862,7 +1862,7 @@
           },
           {
             "name": "Autolt · Phrase / offline",
-            "source_uuid": "ff322f6d-950f-4639-ade2-0fea284f42e1",
+            "source_uuid": "beede7da-964c-4959-a509-44b3d87d3d80",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1900,7 +1900,7 @@
           },
           {
             "name": "Autolt · Logotype",
-            "source_uuid": "5f489485-8c49-4bb4-8e5e-d1bec20d78cc",
+            "source_uuid": "7300175a-c68b-4ede-bf18-752ba7105c81",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1938,7 +1938,7 @@
           },
           {
             "name": "Autolt · Fond",
-            "source_uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+            "source_uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -1996,7 +1996,7 @@
     {
       "prev_ver": 520093699,
       "name": "🔗 Réseaux",
-      "uuid": "325048d9-9ced-41ae-a6fa-d7c588cef40e",
+      "uuid": "e3a18e38-c299-4d54-a8fa-1c26722e119d",
       "id": "scene",
       "versioned_id": "scene",
       "settings": {
@@ -2005,7 +2005,7 @@
         "items": [
           {
             "name": "Autolt · Panneau réseaux",
-            "source_uuid": "95d7ad05-b7d5-4c91-93be-7315ad1a9e41",
+            "source_uuid": "d0aef2aa-d813-4f32-96f7-f32b67f9a865",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -2043,7 +2043,7 @@
           },
           {
             "name": "Autolt · Logotype",
-            "source_uuid": "5f489485-8c49-4bb4-8e5e-d1bec20d78cc",
+            "source_uuid": "7300175a-c68b-4ede-bf18-752ba7105c81",
             "visible": true,
             "locked": false,
             "rot": 0,
@@ -2081,7 +2081,7 @@
           },
           {
             "name": "Autolt · Fond",
-            "source_uuid": "8d7c0065-9066-4b2f-a78b-84d82d3a2fae",
+            "source_uuid": "399b190c-9477-489a-b8e2-1aec132c04dc",
             "visible": true,
             "locked": false,
             "rot": 0,

@@ -10,19 +10,23 @@ Ils sont tous dans `overlays/widgets/`.
 |---|---|---|
 | Fond (dégradé + coups de pinceau) | `bg.html` | 1920 × 1080 |
 | Logotype + couronne | `logo.html` | 538 × 332 |
-| Logotype petit | `logo.html?size=sm` | 274 × 193 |
+| Logotype petit | `logo-petit.html` | 274 × 193 |
 | Accroche (STREAM // GAMING // …) | `tagline.html` | 648 × 74 |
 | Rangée de réseaux | `socials.html` | 655 × 90 |
 | Panneau profil / réseaux | `panels.html` | 568 × 440 |
 | Cadre caméra | `cam.html` | 448 × 273 |
 | Cadre chat | `chat.html` | 408 × 608 |
+| Cadre chat haut | `chat-haut.html` | 408 × 858 |
 | Cadre jeu | `jeu.html` | 1488 × 858 |
 | Pastille « en direct » | `live.html` | 231 × 100 |
 | Stats FACEIT (elo, winrate, %HS, K/D) | `faceit.html` | 783 × 100 |
 | Infos partie (map + elo, fixes) | `infos.html` | 511 × 100 |
 | Minuterie | `timer.html` | 283 × 110 |
 | Barres d'alerte | `alertes.html` | 516 × 346 |
-| Phrase de scène | `phrase.html?scene=pause` | ~700 × 84 |
+| Phrase « le stream commence bientôt » | `phrase-starting.html` | 752 × 84 |
+| Phrase « pause » | `phrase-pause.html` | 693 × 84 |
+| Phrase « merci d'avoir regardé » | `phrase-fin.html` | 586 × 84 |
+| Phrase « actuellement offline » | `phrase-offline.html` | 585 × 84 |
 
 ## La marge de 24 px
 
@@ -36,9 +40,13 @@ dedans**. Un cadre caméra posé en `x 1490 / y 760` accueille une caméra de
 
 ## Les options
 
-Elles s'ajoutent à l'URL. Attention : le champ « Fichier local » d'OBS ne les
-accepte pas — pour les utiliser, **décoche « Fichier local »** et colle
-l'adresse complète dans **URL** :
+Les variantes utiles ont **leur propre fichier** (`logo-petit.html`,
+`chat-haut.html`, `phrase-pause.html`…) : la collection n'utilise donc que des
+fichiers locaux, qu'OBS sait retrouver tout seul si le dossier bouge.
+
+Pour le reste, les options s'ajoutent à l'URL. Attention : le champ « Fichier
+local » d'OBS ne les lit pas — pour les utiliser, **décoche « Fichier local »**
+et colle l'adresse complète dans **URL** :
 
 ```
 file:///C:/Users/Public/autolt-obs/overlays/widgets/cam.html?w=520&h=293

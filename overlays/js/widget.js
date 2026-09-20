@@ -5,7 +5,14 @@
 (function (global) {
   'use strict';
   var BB = global.BB, CFG = BB.cfg;
-  var el = BB.el, add = BB.add, esc = BB.esc, q = BB.q;
+  var el = BB.el, add = BB.add, esc = BB.esc;
+  /* Une page peut figer ses options : BB.widget('logo', { size: 'sm' }).
+     Ça évite les chaînes de requête dans les URL, qu'OBS ne sait ni lire en
+     mode « Fichier local », ni réparer depuis « Fichiers manquants ».      */
+  var OPTS = {};
+  var q = function (name, d) {
+    return OPTS[name] !== undefined ? OPTS[name] : BB.q(name, d);
+  };
   var num = function (name, d) { return parseInt(q(name, d), 10) || d; };
 
   var BUILD = {
@@ -109,7 +116,8 @@
      renforcés et aux étiquettes qui débordent, sinon la source les rogne. */
   var PAD = { logo: 52, bg: 0 };
 
-  BB.widget = function (name) {
+  BB.widget = function (name, opts) {
+    OPTS = opts || {};
     var build = BUILD[name];
     if (!build) throw new Error('widget inconnu : ' + name);
     document.documentElement.setAttribute('data-da', BB.da);
